@@ -1,4 +1,5 @@
 from abc import ABC
+import numpy as np
 
 
 class MultiInstanceMultiLabelKNN(ABC):
@@ -29,3 +30,15 @@ class MultiInstanceMultiLabelKNN(ABC):
 
     def make_prediction_internal(self, instance):
         raise NotImplementedError
+    
+    def get_distances(self, bags):
+
+        n = len(bags)
+        self.D = np.zeros((n, n))
+
+        for i in range(n):
+            for j in range(i+1, n):
+                d = self.metric.distance(bags[i], bags[j])
+                self.D[i][j] = d
+                self.D[j][i] = d
+        return self.D

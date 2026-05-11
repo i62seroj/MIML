@@ -30,8 +30,8 @@ class MIMLBRkNN(MultiInstanceMultiLabelKNN):
         self.extension = extension
         self.metric = metric
 
-        self.train_bags = None
-        self.train_labels = None  # matriz binaria (n_bags, n_labels)
+        self.bags = None
+        self.Y = None  # matriz binaria (n_bags, n_labels)
 
         self.extension = extension
 
@@ -45,11 +45,12 @@ class MIMLBRkNN(MultiInstanceMultiLabelKNN):
         bags: list of Bag
         labels: np.array shape (n_bags, n_labels)
         """
-        self.train_bags = bags
-        self.train_labels = labels
+        # n = len(bags)
+
+        # self.D = self.get_distances(bags)
 
 
-    def predict(self, bag):
+    def make_prediction_internal(self, bag):
         """
         Predict the bag distance with training bag 
 
@@ -57,15 +58,25 @@ class MIMLBRkNN(MultiInstanceMultiLabelKNN):
         ----------
         bag
         """
-        distances = np.array([
-            self.metric.distance(bag, train_bag)
-            for train_bag in self.train_bags
-        ])
+        distances = []
+
+        for i in range(len(self.bags)):
+            d = self.metric.distance(bag, self.bags[i])
+            distances.append((i, d))
+        # distances = np.array([
+        #     self.metric.distance(bag, train_bag)
+        #     for train_bag in self.bags
+        # ])
 
         # Order and take k nearest neighbors
-        nn_idx = np.argsort(distances)[:self.k]
-        nn_labels = self.train_labels[nn_idx]
+        # nn_idx = np.argsort(distances)[:self.k]
+        # nn_labels = self.Y[nn_idx]
+        distances.sort(key=lambda x: x[1])
 
+
+        nn_idx = [idx for idx, _ in distances[:self.k]]
+
+        nn_labels = self.Y[nn_idx]
         # Count by labels
         label_counts = np.sum(nn_labels, axis=0)
 
@@ -101,6 +112,8 @@ class MIMLBRkNN(MultiInstanceMultiLabelKNN):
         if self.extension == ExtensionType.EXTB:
             avg_size = int(np.round(np.mean(np.sum(nn_labels, axis=1))))
 
+            if avg_size == 0:
+                return prediction
             # coger las labels más frecuentes
             top_labels = np.argsort(label_counts)[::-1][:avg_size]
 
@@ -124,20 +137,24 @@ class MIMLBRkNN(MultiInstanceMultiLabelKNN):
         ----------
         training_set: dataset to train
         """
-        self.train_bags = list(training_set.data.values())
+        self.bags = list(training_set.data.values())
 
-        self.train_labels = np.array([
-            bag.get_labels()[0] for bag in self.train_bags
-        ])
+        def extract_labels(bag):
+                labels = bag.get_labels()
+                if len(labels.shape) == 2:
+                    return labels[0]
+                return labels
+        
+        self.Y = np.array([extract_labels(b) for b in self.bags])
 
-        self.fit(self.train_bags, self.train_labels)
+        self.fit(self.bags, self.Y)
 
 
-    def make_prediction_internal(self, instance):
-        """
-        Method to predict the distance
-        """
-        return self.predict(instance)
+    # def make_prediction_internal(self, instance):
+    #     """
+    #     Method to predict the distance
+    #     """
+    #     return self.predict(instance)
 
 
     def get_extension(self):

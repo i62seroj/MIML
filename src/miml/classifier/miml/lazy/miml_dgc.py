@@ -47,12 +47,9 @@ class MIMLDGC(MultiInstanceMultiLabelKNN):
         bags: list of Bag
         """
 
-        self.bags = bags
-
-        # Labels in each bag
-        self.Y = np.array([np.max(b.get_labels(), axis=0) for b in bags])
-
         n = len(bags)
+
+        self.D = self.get_distances(bags)
 
         self.NGC = np.zeros(n)
         self.weights = np.zeros(n)
@@ -64,11 +61,29 @@ class MIMLDGC(MultiInstanceMultiLabelKNN):
 
         for i in range(n):
             if self.weight_max != self.weight_min:
-                self.weights[i] /= (self.weight_max - self.weight_min)
+                self.weights[i] = (self.weights[i] - self.weight_min) / (self.weight_max - self.weight_min)
             else:
                 self.weights[i] = 0
 
             self.NGC[i] = self.densities[i] ** self.weights[i]
+
+
+    def build_internal(self, training_set):
+        """
+        Method to train dataset
+
+        Parameters
+        ----------
+        training_set: dataset to train
+        """
+        self.bags = list(training_set.data.values())
+
+        self.Y = np.array([
+            bag.get_labels()[0] for bag in self.bags
+        ])
+
+        self.fit(self.bags)
+
 
     def make_prediction_internal(self, bag):
         """
@@ -137,7 +152,8 @@ class MIMLDGC(MultiInstanceMultiLabelKNN):
             if i == j:
                 continue
 
-            d = self.metric.distance(self.bags[i], self.bags[j])
+            d = self.D[i][j]
+            #d = self.metric.distance(self.bags[i], self.bags[j])
             distances.append((j, d))
 
         distances.sort(key=lambda x: x[1])
