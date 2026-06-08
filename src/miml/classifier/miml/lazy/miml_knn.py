@@ -290,13 +290,9 @@ class MIMLkNN(MultiInstanceMultiLabelKNN):
         ndarray
         """
 
-        phi_t = self.phi_matrix.T
+        weights, _, _, _ = np.linalg.lstsq(self.phi_matrix, self.t_matrix, rcond=None)
 
-        A = phi_t @ self.phi_matrix
-
-        B = phi_t @ self.t_matrix
-
-        return np.linalg.pinv(A) @ B
+        return weights
 
     def _calculate_test_record(self, bag):
         """
