@@ -178,5 +178,5 @@ def hamming_accuracy_score(y_true: np.ndarray, y_pred: np.ndarray):
     numerator = (y_true.astype(int) & y_pred.astype(int)).sum(axis=1)
     denominator = (y_true.astype(int) | y_pred.astype(int)).sum(axis=1)
 
-    return np.divide(numerator, denominator, out=np.ones_like(numerator, dtype=np.float_),
+    return np.divide(numerator, denominator, out=np.ones_like(numerator, dtype=np.float64),
                      where=denominator != 0).mean()
