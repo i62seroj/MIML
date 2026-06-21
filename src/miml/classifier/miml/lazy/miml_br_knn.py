@@ -14,7 +14,7 @@ class MIMLBRkNN(MultiInstanceMultiLabelKNN):
     """
     Class to represent Multi instance Multi Label Binary Relevance K Nearest Neighbors
     """
-    def __init__(self, metric=AverageHausdorff(), num_of_neighbours=10, extension=ExtensionType.NONE):
+    def __init__(self, num_of_neighbours=10, metric=None, extension=ExtensionType.NONE):
         """
         Constructor of the class MIMLBRkNN
 
@@ -26,6 +26,10 @@ class MIMLBRkNN(MultiInstanceMultiLabelKNN):
         """
         super().__init__(metric, num_of_neighbours)
 
+
+        if metric == None:
+            metric = AverageHausdorff()
+        
         self.k = num_of_neighbours
         self.extension = extension
         self.metric = metric
