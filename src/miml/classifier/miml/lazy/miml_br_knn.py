@@ -62,27 +62,7 @@ class MIMLBRkNN(MultiInstanceMultiLabelKNN):
         ----------
         bag
         """
-        distances = []
-
-        for i in range(len(self.bags)):
-            d = self.metric.distance(bag, self.bags[i])
-            distances.append((i, d))
-        # distances = np.array([
-        #     self.metric.distance(bag, train_bag)
-        #     for train_bag in self.bags
-        # ])
-
-        # Order and take k nearest neighbors
-        # nn_idx = np.argsort(distances)[:self.k]
-        # nn_labels = self.Y[nn_idx]
-        distances.sort(key=lambda x: x[1])
-
-
-        nn_idx = [idx for idx, _ in distances[:self.k]]
-
-        nn_labels = self.Y[nn_idx]
-        # Count by labels
-        label_counts = np.sum(nn_labels, axis=0)
+        label_counts, nn_labels = self._get_neighbor_label_counts(bag)
 
         prediction = (label_counts >= (self.k / 2)).astype(int)
 
@@ -153,6 +133,8 @@ class MIMLBRkNN(MultiInstanceMultiLabelKNN):
 
         self.fit(self.bags, self.Y)
 
+        self.trained = True
+
 
     # def make_prediction_internal(self, instance):
     #     """
@@ -167,3 +149,37 @@ class MIMLBRkNN(MultiInstanceMultiLabelKNN):
 
     def set_extension(self, extension):
         self.extension = extension
+
+    def _get_neighbor_label_counts(self, bag):
+        distances = []
+
+        for i in range(len(self.bags)):
+            d = self.metric.distance(bag, self.bags[i])
+            distances.append((i, d))
+
+        distances.sort(key=lambda x: x[1])
+
+        nn_idx = [idx for idx, _ in distances[:self.k]]
+
+        nn_labels = self.Y[nn_idx]
+
+        label_counts = np.sum(nn_labels, axis=0)
+
+        return label_counts, nn_labels
+
+    def predict_proba_bag(self, bag):
+        label_counts, _ = self._get_neighbor_label_counts(bag)
+        return label_counts / self.k
+
+    def predict_proba(self, dataset_test):
+        if not self.trained:
+            raise Exception(
+                "The classifier is not trained. You need to call fit before predict anything"
+            )
+
+        test_bags = list(dataset_test.data.values())
+
+        return np.array([
+            self.predict_proba_bag(bag)
+            for bag in test_bags
+        ])

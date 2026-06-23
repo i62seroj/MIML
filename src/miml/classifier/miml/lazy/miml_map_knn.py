@@ -7,14 +7,14 @@ from ....core.average_hausdorff import AverageHausdorff
 
 class MIMLMAPkNN(MultiInstanceMultiLabelKNN):
 
-    def __init__(self, k=10, metric=None, smooth=1.0):
+    def __init__(self, num_of_neighbours=10, metric=None, smooth=1.0):
 
-        super().__init__(k, metric)
+        super().__init__(num_of_neighbours, metric)
 
         if metric == None:
             metric = AverageHausdorff()
 
-        self.k = k
+        self.k = num_of_neighbours
         self.metric = metric
         self.smooth = smooth
 
@@ -56,6 +56,8 @@ class MIMLMAPkNN(MultiInstanceMultiLabelKNN):
 
         self._compute_prior(n, n_labels)
         self._compute_conditional(n, n_labels)
+        
+        self.trained = True
 
     def _compute_prior(self, n, n_labels):
         """
@@ -174,3 +176,41 @@ class MIMLMAPkNN(MultiInstanceMultiLabelKNN):
                 confidence[l] = (p1 / (p1 + p0))
 
         return prediction, confidence
+    
+    def evaluate(self, dataset_test):
+
+        if not self.trained:
+            raise Exception(
+                "The classifier is not trained. You need to call fit before predict anything"
+            )
+
+        test_bags = list(dataset_test.data.values())
+
+        predictions = []
+
+        for bag in test_bags:
+
+            prediction, _ = self.predict(bag)
+
+            predictions.append(prediction)
+
+        return np.array(predictions)
+
+    def predict_proba(self, dataset_test):
+
+        if not self.trained:
+            raise Exception(
+                "The classifier is not trained. You need to call fit before predict anything"
+            )
+
+        test_bags = list(dataset_test.data.values())
+
+        probabilities = []
+
+        for bag in test_bags:
+
+            _, confidence = self.predict(bag)
+
+            probabilities.append(confidence)
+
+        return np.array(probabilities)

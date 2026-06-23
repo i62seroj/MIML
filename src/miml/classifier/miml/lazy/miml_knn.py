@@ -22,7 +22,7 @@ class MIMLkNN(MultiInstanceMultiLabelKNN):
         metric : distance metric
         """
 
-        super().__init__(metric)
+        super().__init__(metric, num_of_neighbours=num_references)
 
         if metric is None:
             metric = AverageHausdorff()
@@ -93,6 +93,8 @@ class MIMLkNN(MultiInstanceMultiLabelKNN):
             self.t_matrix[i] = self._get_bag_labels(i)
 
         self.weights_matrix = self._get_weights_matrix()
+
+        self.trained = True
 
     def make_prediction_internal(self, bag):
         """
@@ -342,3 +344,41 @@ class MIMLkNN(MultiInstanceMultiLabelKNN):
         neighbours = list(set(list(refs) + list(citers)))
 
         return self._calculate_record_label(neighbours)
+    
+    def evaluate(self, dataset_test):
+
+        if not self.trained:
+            raise Exception(
+                "The classifier is not trained. You need to call fit before predict anything"
+            )
+
+        test_bags = list(dataset_test.data.values())
+
+        predictions = []
+
+        for bag in test_bags:
+
+            prediction, _ = self.predict(bag)
+
+            predictions.append(prediction)
+
+        return np.array(predictions)
+    
+    def predict_proba(self, dataset_test):
+
+        if not self.trained:
+            raise Exception(
+                "The classifier is not trained. You need to call fit before predict anything"
+            )
+
+        test_bags = list(dataset_test.data.values())
+
+        probabilities = []
+
+        for bag in test_bags:
+
+            _, confidence = self.predict(bag)
+
+            probabilities.append(confidence)
+
+        return np.array(probabilities)

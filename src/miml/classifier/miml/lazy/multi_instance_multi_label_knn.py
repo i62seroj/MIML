@@ -18,6 +18,7 @@ class MultiInstanceMultiLabelKNN(ABC):
         self.metric = metric
         self.num_of_neighbours = num_of_neighbours
         self.classifier = None
+        self.trained = False
 
     def build(self, training_set):
         self.build_internal(training_set)
@@ -42,3 +43,29 @@ class MultiInstanceMultiLabelKNN(ABC):
                 self.D[i][j] = d
                 self.D[j][i] = d
         return self.D
+
+    def evaluate(self, dataset_test):
+        if not self.trained:
+            raise Exception(
+                "The classifier is not trained. You need to call fit before predict anything"
+            )
+
+        test_bags = list(dataset_test.data.values())
+
+        return np.array([
+            self.predict(bag)
+            for bag in test_bags
+        ])
+
+    def predict_proba(self, dataset_test):
+        if not self.trained:
+            raise Exception(
+                "The classifier is not trained. You need to call fit before predict anything"
+            )
+
+        test_bags = list(dataset_test.data.values())
+
+        return np.array([
+            self.predict_proba_bag(bag)
+            for bag in test_bags
+        ])

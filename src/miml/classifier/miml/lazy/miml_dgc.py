@@ -67,6 +67,8 @@ class MIMLDGC(MultiInstanceMultiLabelKNN):
 
             self.NGC[i] = self.densities[i] ** self.weights[i]
 
+        self.trained = True
+
 
     def build_internal(self, training_set):
         """
@@ -228,3 +230,37 @@ class MIMLDGC(MultiInstanceMultiLabelKNN):
 
     def get_bag_labels(bag):
         return np.max(bag.get_labels(), axis=0)
+    
+    def evaluate(self, dataset_test):
+
+        if not self.trained:
+            raise Exception(
+                "The classifier is not trained. You need to call fit before predict anything"
+            )
+
+        test_bags = list(dataset_test.data.values())
+
+        predictions = []
+
+        for bag in test_bags:
+            bipartition, _ = self.predict(bag)
+            predictions.append(bipartition)
+
+        return np.array(predictions)
+    
+    def predict_proba(self, dataset_test):
+
+        if not self.trained:
+            raise Exception(
+                "The classifier is not trained. You need to call fit before predict anything"
+            )
+
+        test_bags = list(dataset_test.data.values())
+
+        probabilities = []
+
+        for bag in test_bags:
+            _, confidence = self.predict(bag)
+            probabilities.append(confidence)
+
+        return np.array(probabilities)
