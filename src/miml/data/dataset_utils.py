@@ -25,7 +25,7 @@ def load_dataset(file: str, from_library: bool = False) -> MIMLDataset:
     """
     if from_library:
         library_datasets = ["toy.arff", "miml_birds.arff", "miml_birds_random_80train.arff",
-                            "miml_birds_random_20test.arff"]
+                            "miml_birds_random_20test.arff", "miml_text_data.arff", "miml_image_data.arff"]
         if file in library_datasets:
             return load_dataset(pkg_resources.resource_filename('miml', 'datasets/'+file))
         else:
