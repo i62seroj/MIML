@@ -1,33 +1,28 @@
 import numpy as np
 
 from .multi_instance_multi_label_knn import MultiInstanceMultiLabelKNN
-from ....core.average_hausdorff import AverageHausdorff
 
 
 class MIMLkNN(MultiInstanceMultiLabelKNN):
+    """Multi-Instance Multi-Label kNN classifier.
+
+    Parameters
+    ----------
+    num_references : int, default=1
+        Number of references used for each training bag.
+    num_citers : int, default=1
+        Number of citers considered for each bag.
+    metric : HausdorffDistance, optional
+        Distance metric used to compare bags.
+    """
 
     def __init__(
         self,
         num_references=1,
         num_citers=1,
-        metric=None
+        metric=None,
     ):
-        """
-        Constructor
-
-        Parameters
-        ----------
-        num_references : number of references (nearest neighbours)
-        num_citers : number of citers
-        metric : distance metric
-        """
-
-        super().__init__(metric, num_of_neighbours=num_references)
-
-        if metric is None:
-            metric = AverageHausdorff()
-
-        self.metric = metric
+        super().__init__(metric)
 
         self.num_references = num_references
         self.num_citers = num_citers
@@ -35,350 +30,403 @@ class MIMLkNN(MultiInstanceMultiLabelKNN):
         self.bags = None
         self.Y = None
 
+        self.D = None
         self.ref_matrix = None
 
         self.phi_matrix = None
         self.t_matrix = None
-
         self.weights_matrix = None
 
     def build_internal(self, training_set):
-        """
-        Train classifier
+        """Train the MIMLkNN classifier.
 
         Parameters
         ----------
-        training_set
+        training_set : Dataset
+            Dataset used for training.
         """
-
         self.bags = list(training_set.data.values())
 
         self.Y = np.array([
-            bag.get_labels()[0]
+            np.max(
+                bag.get_labels(),
+                axis=0,
+            )
             for bag in self.bags
         ])
 
-        self.fit(self.bags)
+        self._fit()
 
-    def fit(self, bags):
-        """
-        Train classifier
+    def _fit(self):
+        """Calculate all parameters required by MIMLkNN."""
+        n_bags = len(self.bags)
 
-        Parameters
-        ----------
-        bags : list[Bag]
-        """
+        if n_bags <= self.num_references:
+            self.num_references = max(
+                1,
+                n_bags - 1,
+            )
 
-        n = len(bags)
-
-        if n <= self.num_references:
-            self.num_references = n - 1
-
-        self.D = self.get_distances(bags)
+        self.D = self.get_distances(self.bags)
 
         n_labels = self.Y.shape[1]
 
-        self.phi_matrix = np.zeros((n, n_labels))
+        self.phi_matrix = np.zeros(
+            (n_bags, n_labels)
+        )
 
-        self.t_matrix = np.zeros((n, n_labels))
+        self.t_matrix = np.zeros(
+            (n_bags, n_labels)
+        )
 
         self._calculate_reference_matrix()
 
-        for i in range(n):
+        for index in range(n_bags):
+            neighbours = self._get_union_neighbours(
+                index
+            )
 
-            neighbours = self._get_union_neighbours(i)
+            self.phi_matrix[index] = (
+                self._calculate_record_label(
+                    neighbours
+                )
+            )
 
-            self.phi_matrix[i] = self._calculate_record_label(neighbours)
+            self.t_matrix[index] = (
+                self._get_bag_labels(index)
+            )
 
-            self.t_matrix[i] = self._get_bag_labels(i)
-
-        self.weights_matrix = self._get_weights_matrix()
-
-        self.trained = True
+        self.weights_matrix = (
+            self._get_weights_matrix()
+        )
 
     def make_prediction_internal(self, bag):
-        """
-        Predict labels for a bag
+        """Predict the labels of a bag.
 
         Parameters
         ----------
         bag : Bag
+            Bag to classify.
 
         Returns
         -------
-        bipartition, confidence
+        numpy.ndarray
+            Binary label prediction.
         """
+        prediction, _ = self._predict_with_confidence(
+            bag
+        )
 
+        return prediction
+
+    def predict_proba_bag(self, bag):
+        """Calculate confidence values for a bag.
+
+        Parameters
+        ----------
+        bag : Bag
+            Bag to classify.
+
+        Returns
+        -------
+        numpy.ndarray
+            Confidence values for each label.
+        """
+        _, confidence = self._predict_with_confidence(
+            bag
+        )
+
+        return confidence
+
+    def _predict_with_confidence(self, bag):
+        """Calculate predictions and confidence values.
+
+        Parameters
+        ----------
+        bag : Bag
+            Bag to classify.
+
+        Returns
+        -------
+        tuple[numpy.ndarray, numpy.ndarray]
+            Binary predictions and confidence values.
+        """
         record = self._calculate_test_record(bag)
 
         n_labels = self.Y.shape[1]
 
-        bipartition = np.zeros(n_labels, dtype=int)
+        prediction = np.zeros(
+            n_labels,
+            dtype=int,
+        )
 
-        confidence = np.zeros(n_labels)
+        confidence = np.zeros(
+            n_labels,
+            dtype=float,
+        )
 
         for label in range(n_labels):
-
             weights = self.weights_matrix[:, label]
 
-            decision_value = np.dot(weights, record)
+            decision_value = np.dot(
+                weights,
+                record,
+            )
 
-            prediction = decision_value > 0.3
+            is_positive = decision_value > 0.3
 
-            bipartition[label] = int(prediction)
-            confidence[label] = 1.0 if prediction else 0.0
+            prediction[label] = int(is_positive)
 
-        return bipartition, confidence
+            confidence[label] = (
+                1.0 if is_positive else 0.0
+            )
+
+        return prediction, confidence
 
     def _calculate_reference_matrix(self):
-        """
-        Build reference matrix
-        """
+        """Build the reference matrix."""
+        n_bags = len(self.bags)
 
-        n = len(self.bags)
+        self.ref_matrix = np.zeros(
+            (n_bags, n_bags),
+            dtype=int,
+        )
 
-        self.ref_matrix = np.zeros((n, n), dtype=int)
+        for index in range(n_bags):
+            references = self._calculate_bag_references(
+                index
+            )
 
-        for i in range(n):
-
-            refs = self._calculate_bag_references(i)
-
-            for r in refs:
-                self.ref_matrix[i][r] = 1
+            for reference in references:
+                self.ref_matrix[index, reference] = 1
 
     def _calculate_bag_references(self, index):
-        """
-        Calculate references of a bag
+        """Calculate the references of a training bag.
 
         Parameters
         ----------
         index : int
+            Index of the bag.
 
         Returns
         -------
         list[int]
+            Indices of the nearest reference bags.
         """
-
         distances = []
 
-        for j in range(len(self.bags)):
-
-            if j == index:
+        for neighbour_index in range(len(self.bags)):
+            if neighbour_index == index:
                 continue
 
-            distances.append((j, self.D[index][j]))
+            distances.append(
+                (
+                    neighbour_index,
+                    self.D[index][neighbour_index],
+                )
+            )
 
-        distances.sort(key=lambda x: x[1])
+        distances.sort(key=lambda item: item[1])
 
         return [
-            idx
-            for idx, _
-            in distances[:self.num_references]
+            neighbour_index
+            for neighbour_index, _ in distances[
+                :self.num_references
+            ]
         ]
 
     def _get_references(self, index):
-        """
-        Get references of a bag
+        """Get the references of a bag.
 
         Parameters
         ----------
         index : int
+            Bag index.
 
         Returns
         -------
         list[int]
+            Reference indices.
         """
-
-        refs = []
-
-        for j in range(len(self.bags)):
-
-            if self.ref_matrix[index][j] == 1:
-                refs.append(j)
-
-        return refs
+        return [
+            neighbour_index
+            for neighbour_index in range(len(self.bags))
+            if self.ref_matrix[
+                index,
+                neighbour_index,
+            ] == 1
+        ]
 
     def _get_citers(self, index):
-        """
-        Get citers of a bag
+        """Get the nearest citers of a bag.
 
         Parameters
         ----------
         index : int
+            Bag index.
 
         Returns
         -------
         list[int]
+            Citer indices.
         """
-
         citers = []
 
-        for j in range(len(self.bags)):
+        for neighbour_index in range(len(self.bags)):
+            if self.ref_matrix[
+                neighbour_index,
+                index,
+            ] == 1:
+                citers.append(
+                    (
+                        neighbour_index,
+                        self.D[index][neighbour_index],
+                    )
+                )
 
-            if self.ref_matrix[j][index] == 1:
-
-                citers.append((j, self.D[index][j]))
-
-        citers.sort(key=lambda x: x[1])
+        citers.sort(key=lambda item: item[1])
 
         return [
-            idx
-            for idx, _
-            in citers[:self.num_citers]
+            neighbour_index
+            for neighbour_index, _ in citers[
+                :self.num_citers
+            ]
         ]
 
     def _get_union_neighbours(self, index):
-        """
-        Union references + citers
+        """Get the union of references and citers.
 
         Parameters
         ----------
         index : int
+            Bag index.
 
         Returns
         -------
         list[int]
+            Unique neighbour indices.
         """
-
-        refs = self._get_references(index)
-
+        references = self._get_references(index)
         citers = self._get_citers(index)
 
-        return list(set(refs + citers))
+        return list(
+            set(references + citers)
+        )
 
     def _calculate_record_label(self, neighbours):
-        """
-        Count labels in neighbourhood
+        """Count labels in a neighbourhood.
 
         Parameters
         ----------
         neighbours : list[int]
+            Neighbour indices.
 
         Returns
         -------
-        ndarray
+        numpy.ndarray
+            Label-count vector.
         """
-
         n_labels = self.Y.shape[1]
 
         counts = np.zeros(n_labels)
 
-        for idx in neighbours:
-            counts += self.Y[idx]
+        for index in neighbours:
+            counts += self.Y[index]
 
         return counts
 
     def _get_bag_labels(self, index):
-        """
-        Convert labels to {-1,+1}
+        """Convert binary labels from {0, 1} to {-1, 1}.
 
         Parameters
         ----------
         index : int
+            Bag index.
 
         Returns
         -------
-        ndarray
+        numpy.ndarray
+            Transformed label vector.
         """
-
-        return np.where(self.Y[index] == 1, 1.0, -1.0)
+        return np.where(
+            self.Y[index] == 1,
+            1.0,
+            -1.0,
+        )
 
     def _get_weights_matrix(self):
-        """
-        Calculate weights matrix
+        """Calculate the regression weights.
 
         Returns
         -------
-        ndarray
+        numpy.ndarray
+            Weight matrix.
         """
-
-        weights, _, _, _ = np.linalg.lstsq(self.phi_matrix, self.t_matrix, rcond=None)
+        weights, _, _, _ = np.linalg.lstsq(
+            self.phi_matrix,
+            self.t_matrix,
+            rcond=None,
+        )
 
         return weights
 
     def _calculate_test_record(self, bag):
-        """
-        Calculate label-count vector of a test bag
+        """Calculate the neighbourhood label vector of a test bag.
 
         Parameters
         ----------
         bag : Bag
+            Test bag.
 
         Returns
         -------
-        ndarray
+        numpy.ndarray
+            Label-count vector.
         """
+        n_bags = len(self.bags)
 
-        n = len(self.bags)
+        distances = np.zeros(n_bags)
 
-        distances = np.zeros(n)
+        for index in range(n_bags):
+            distances[index] = self.metric.distance(
+                bag,
+                self.bags[index],
+            )
 
-        for i in range(n):
-
-            distances[i] = self.metric.distance(bag, self.bags[i])
-
-        refs = np.argsort(distances)[:self.num_references]
+        references = np.argsort(
+            distances
+        )[:self.num_references]
 
         citers = []
 
-        for i in range(n):
+        for index in range(n_bags):
+            train_references = self._get_references(
+                index
+            )
 
-            train_refs = self._get_references(i)
-
-            if len(train_refs) == 0:
+            if not train_references:
                 continue
 
-            worst_reference_distance = max(self.D[i][r]
-                for r in train_refs
+            worst_reference_distance = max(
+                self.D[index][reference]
+                for reference in train_references
             )
 
-            if distances[i] < worst_reference_distance:
-                citers.append(i)
+            if distances[index] < worst_reference_distance:
+                citers.append(index)
 
-        if len(citers) > 0:
+        citers.sort(
+            key=lambda index: distances[index]
+        )
 
-            citers.sort(key=lambda idx: distances[idx])
+        citers = citers[:self.num_citers]
 
-            citers = citers[:self.num_citers]
-
-        neighbours = list(set(list(refs) + list(citers)))
-
-        return self._calculate_record_label(neighbours)
-    
-    def evaluate(self, dataset_test):
-
-        if not self.trained:
-            raise Exception(
-                "The classifier is not trained. You need to call fit before predict anything"
+        neighbours = list(
+            set(
+                list(references) + citers
             )
+        )
 
-        test_bags = list(dataset_test.data.values())
-
-        predictions = []
-
-        for bag in test_bags:
-
-            prediction, _ = self.predict(bag)
-
-            predictions.append(prediction)
-
-        return np.array(predictions)
-    
-    def predict_proba(self, dataset_test):
-
-        if not self.trained:
-            raise Exception(
-                "The classifier is not trained. You need to call fit before predict anything"
-            )
-
-        test_bags = list(dataset_test.data.values())
-
-        probabilities = []
-
-        for bag in test_bags:
-
-            _, confidence = self.predict(bag)
-
-            probabilities.append(confidence)
-
-        return np.array(probabilities)
+        return self._calculate_record_label(
+            neighbours
+        )

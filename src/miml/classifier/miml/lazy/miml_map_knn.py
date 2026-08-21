@@ -1,27 +1,36 @@
 import numpy as np
-from collections import Counter
 
 from .multi_instance_multi_label_knn import MultiInstanceMultiLabelKNN
-from ....core.average_hausdorff import AverageHausdorff
 
 
 class MIMLMAPkNN(MultiInstanceMultiLabelKNN):
+    """Multi-Instance Multi-Label MAP kNN classifier.
 
-    def __init__(self, num_of_neighbours=10, metric=None, smooth=1.0):
+    Parameters
+    ----------
+    num_of_neighbours : int, default=10
+        Number of neighbours used by the classifier.
+    metric : HausdorffDistance, optional
+        Distance metric used to compare bags.
+    smooth : float, default=1.0
+        Laplace smoothing parameter.
+    """
 
-        super().__init__(num_of_neighbours, metric)
-
-        if metric == None:
-            metric = AverageHausdorff()
+    def __init__(
+        self,
+        num_of_neighbours=10,
+        metric=None,
+        smooth=1.0,
+    ):
+        super().__init__(metric)
 
         self.k = num_of_neighbours
-        self.metric = metric
         self.smooth = smooth
 
         self.bags = None
         self.Y = None
-
         self.D = None
+
         self.prior = None
         self.prior_n = None
 
@@ -29,188 +38,283 @@ class MIMLMAPkNN(MultiInstanceMultiLabelKNN):
         self.cond_n = None
 
     def build_internal(self, training_set):
+        """Train the MAP kNN classifier.
 
+        Parameters
+        ----------
+        training_set : Dataset
+            Dataset used for training.
+        """
         self.bags = list(training_set.data.values())
 
         self.Y = np.array([
-            np.max(bag.get_labels(), axis=0)
+            np.max(
+                bag.get_labels(),
+                axis=0,
+            )
             for bag in self.bags
         ])
 
-        self.fit(self.bags)
+        self._fit()
 
-
-    def fit(self, bags):
-
-        n = len(bags)
-
-        self.D = self.get_distances(bags)
-
+    def _fit(self):
+        """Calculate all MAP kNN model parameters."""
+        n_bags = len(self.bags)
         n_labels = self.Y.shape[1]
+
+        self.D = self.get_distances(self.bags)
 
         self.prior = np.zeros(n_labels)
         self.prior_n = np.zeros(n_labels)
 
-        self.cond = np.zeros((n_labels, self.k + 1))
-        self.cond_n = np.zeros((n_labels, self.k + 1))
+        self.cond = np.zeros(
+            (n_labels, self.k + 1)
+        )
 
-        self._compute_prior(n, n_labels)
-        self._compute_conditional(n, n_labels)
-        
-        self.trained = True
+        self.cond_n = np.zeros(
+            (n_labels, self.k + 1)
+        )
 
-    def _compute_prior(self, n, n_labels):
+        self._compute_prior(
+            n_bags,
+            n_labels,
+        )
+
+        self._compute_conditional(
+            n_bags,
+            n_labels,
+        )
+
+    def _compute_prior(self, n_bags, n_labels):
+        """Calculate prior label probabilities.
+
+        Parameters
+        ----------
+        n_bags : int
+            Number of training bags.
+        n_labels : int
+            Number of labels.
         """
-        Compute prior probabilities.
+        for label in range(n_labels):
+            positives = np.sum(
+                self.Y[:, label]
+            )
+
+            self.prior[label] = (
+                self.smooth + positives
+            ) / (
+                self.smooth * 2 + n_bags
+            )
+
+            self.prior_n[label] = (
+                1.0 - self.prior[label]
+            )
+
+    def _compute_conditional(self, n_bags, n_labels):
+        """Calculate conditional probabilities.
+
+        Parameters
+        ----------
+        n_bags : int
+            Number of training bags.
+        n_labels : int
+            Number of labels.
         """
+        temp_c = np.zeros(
+            (n_labels, self.k + 1),
+            dtype=int,
+        )
 
-        for l in range(n_labels):
+        temp_nc = np.zeros(
+            (n_labels, self.k + 1),
+            dtype=int,
+        )
 
-            positives = np.sum(self.Y[:, l])
+        for index in range(n_bags):
+            neighbours = self._get_neighbors(index)
 
-            self.prior[l] = (self.smooth + positives) / (self.smooth * 2 + n)
+            for label in range(n_labels):
+                positive_neighbours = sum(
+                    self.Y[neighbour][label] == 1
+                    for neighbour in neighbours
+                )
 
-            self.prior_n[l] = 1.0 - self.prior[l]
-
-    def _compute_conditional(self, n, n_labels):
-        """
-        Compute conditional probabilities.
-        """
-
-        temp_c = np.zeros((n_labels, self.k + 1), dtype=int)
-
-        temp_nc = np.zeros((n_labels, self.k + 1), dtype=int)
-
-        for i in range(n):
-
-            neighbors = self._get_neighbors(i)
-
-            for l in range(n_labels):
-
-                aces = 0
-
-                for j in neighbors:
-
-                    if self.Y[j][l] == 1:
-                        aces += 1
-
-                if self.Y[i][l] == 1:
-                    temp_c[l][aces] += 1
+                if self.Y[index][label] == 1:
+                    temp_c[
+                        label,
+                        positive_neighbours,
+                    ] += 1
                 else:
-                    temp_nc[l][aces] += 1
+                    temp_nc[
+                        label,
+                        positive_neighbours,
+                    ] += 1
 
-        for l in range(n_labels):
+        for label in range(n_labels):
+            total_positive = np.sum(
+                temp_c[label]
+            )
 
-            total_c = np.sum(temp_c[l])
-            total_nc = np.sum(temp_nc[l])
+            total_negative = np.sum(
+                temp_nc[label]
+            )
 
-            for j in range(self.k + 1):
+            for count in range(self.k + 1):
+                self.cond[label][count] = (
+                    self.smooth
+                    + temp_c[label][count]
+                ) / (
+                    self.smooth * (self.k + 1)
+                    + total_positive
+                )
 
-                self.cond[l][j] = (self.smooth + temp_c[l][j]) / (self.smooth * (self.k + 1) + total_c)
+                self.cond_n[label][count] = (
+                    self.smooth
+                    + temp_nc[label][count]
+                ) / (
+                    self.smooth * (self.k + 1)
+                    + total_negative
+                )
 
-                self.cond_n[l][j] = (self.smooth + temp_nc[l][j]) / (self.smooth * (self.k + 1) + total_nc)
+    def _get_neighbors(self, index):
+        """Get the k nearest training neighbours.
 
+        Parameters
+        ----------
+        index : int
+            Index of the training bag.
 
-
-    def _get_neighbors(self, i):
+        Returns
+        -------
+        list[int]
+            Indices of the nearest neighbours.
         """
-        Get k nearest neighbours of training bag i.
-        """
-
         distances = []
 
-        for j in range(len(self.bags)):
-
-            if i == j:
+        for neighbour_index in range(len(self.bags)):
+            if neighbour_index == index:
                 continue
 
-            distances.append((j, self.D[i][j]))
+            distances.append(
+                (
+                    neighbour_index,
+                    self.D[index][neighbour_index],
+                )
+            )
 
-        distances.sort(
-            key=lambda x: x[1]
-        )
+        distances.sort(key=lambda item: item[1])
 
         return [
-            idx
-            for idx, _ in distances[:self.k]
+            neighbour_index
+            for neighbour_index, _ in distances[:self.k]
         ]
 
-    def predict(self, bag):
-        
+    def make_prediction_internal(self, bag):
+        """Predict the labels of a bag.
+
+        Parameters
+        ----------
+        bag : Bag
+            Bag to classify.
+
+        Returns
+        -------
+        numpy.ndarray
+            Binary label prediction.
+        """
+        prediction, _ = self._predict_with_confidence(bag)
+
+        return prediction
+
+    def predict_proba_bag(self, bag):
+        """Calculate label probabilities for a bag.
+
+        Parameters
+        ----------
+        bag : Bag
+            Bag to classify.
+
+        Returns
+        -------
+        numpy.ndarray
+            Probability for each label.
+        """
+        _, confidence = self._predict_with_confidence(bag)
+
+        return confidence
+
+    def _predict_with_confidence(self, bag):
+        """Calculate predictions and confidence values.
+
+        Parameters
+        ----------
+        bag : Bag
+            Bag to classify.
+
+        Returns
+        -------
+        tuple[numpy.ndarray, numpy.ndarray]
+            Binary predictions and confidence values.
+        """
         distances = []
 
-        for i in range(len(self.bags)):
+        for index, training_bag in enumerate(self.bags):
+            distance = self.metric.distance(
+                bag,
+                training_bag,
+            )
 
-            d = self.metric.distance(bag,self.bags[i])
+            distances.append((index, distance))
 
-            distances.append((i, d))
+        distances.sort(key=lambda item: item[1])
 
-        distances.sort(
-            key=lambda x: x[1]
-        )
-
-        neighbors = distances[:self.k]
+        neighbours = distances[:self.k]
 
         n_labels = self.Y.shape[1]
 
-        prediction = np.zeros(n_labels, dtype=int)
+        prediction = np.zeros(
+            n_labels,
+            dtype=int,
+        )
 
-        confidence = np.zeros(n_labels, dtype=float)
+        confidence = np.zeros(
+            n_labels,
+            dtype=float,
+        )
 
-        for l in range(n_labels):
+        for label in range(n_labels):
+            positive_neighbours = sum(
+                self.Y[index][label] == 1
+                for index, _ in neighbours
+            )
 
-            aces = 0
+            p_positive = (
+                self.prior[label]
+                * self.cond[
+                    label,
+                    positive_neighbours,
+                ]
+            )
 
-            for idx, _ in neighbors:
+            p_negative = (
+                self.prior_n[label]
+                * self.cond_n[
+                    label,
+                    positive_neighbours,
+                ]
+            )
 
-                if self.Y[idx][l] == 1:
-                    aces += 1
+            if p_positive > p_negative:
+                prediction[label] = 1
 
-            p1 = (self.prior[l] * self.cond[l][aces])
-            p0 = (self.prior_n[l] * self.cond_n[l][aces])
+            total_probability = (
+                p_positive + p_negative
+            )
 
-            if p1 > p0:
-                prediction[l] = 1
-
-            if (p1 + p0) > 0:
-                confidence[l] = (p1 / (p1 + p0))
+            if total_probability > 0:
+                confidence[label] = (
+                    p_positive
+                    / total_probability
+                )
 
         return prediction, confidence
-    
-    def evaluate(self, dataset_test):
-
-        if not self.trained:
-            raise Exception(
-                "The classifier is not trained. You need to call fit before predict anything"
-            )
-
-        test_bags = list(dataset_test.data.values())
-
-        predictions = []
-
-        for bag in test_bags:
-
-            prediction, _ = self.predict(bag)
-
-            predictions.append(prediction)
-
-        return np.array(predictions)
-
-    def predict_proba(self, dataset_test):
-
-        if not self.trained:
-            raise Exception(
-                "The classifier is not trained. You need to call fit before predict anything"
-            )
-
-        test_bags = list(dataset_test.data.values())
-
-        probabilities = []
-
-        for bag in test_bags:
-
-            _, confidence = self.predict(bag)
-
-            probabilities.append(confidence)
-
-        return np.array(probabilities)

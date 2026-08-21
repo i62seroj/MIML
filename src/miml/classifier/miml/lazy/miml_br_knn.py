@@ -1,185 +1,238 @@
-import numpy as np
 from enum import Enum
 
+import numpy as np
+
 from .multi_instance_multi_label_knn import MultiInstanceMultiLabelKNN
-from ....core.average_hausdorff import AverageHausdorff
+
 
 class ExtensionType(Enum):
+    """Extensions available for MIMLBRkNN."""
+
     NONE = "NONE"
     EXTA = "EXTA"
     EXTB = "EXTB"
 
 
 class MIMLBRkNN(MultiInstanceMultiLabelKNN):
+    """Multi-Instance Multi-Label Binary Relevance kNN classifier.
+
+    Parameters
+    ----------
+    num_of_neighbours : int, default=10
+        Number of nearest neighbours used for prediction.
+    metric : HausdorffDistance, optional
+        Distance metric used to compare bags.
+    extension : ExtensionType, default=ExtensionType.NONE
+        Extension applied to the standard binary relevance prediction.
     """
-    Class to represent Multi instance Multi Label Binary Relevance K Nearest Neighbors
-    """
-    def __init__(self, num_of_neighbours=10, metric=None, extension=ExtensionType.NONE):
-        """
-        Constructor of the class MIMLBRkNN
 
-        Parameters
-        ----------
-        metric: the distance metric between bags
-        num_of_neighbours: number of neighbours
-        extension: type of extension (NONE, EXTA, EXTB)
-        """
-        super().__init__(metric, num_of_neighbours)
+    def __init__(
+        self,
+        num_of_neighbours=10,
+        metric=None,
+        extension=ExtensionType.NONE,
+    ):
+        super().__init__(metric)
 
-
-        if metric == None:
-            metric = AverageHausdorff()
-        
         self.k = num_of_neighbours
         self.extension = extension
-        self.metric = metric
 
         self.bags = None
-        self.Y = None  # matriz binaria (n_bags, n_labels)
+        self.Y = None
 
-        self.extension = extension
-
-    def fit(self, bags, labels):
-        """
-        Training the classifier
+    def build_internal(self, training_set):
+        """Prepare the training data.
 
         Parameters
         ----------
-
-        bags: list of Bag
-        labels: np.array shape (n_bags, n_labels)
+        training_set : Dataset
+            Dataset used for training.
         """
-        # n = len(bags)
+        self.bags = list(training_set.data.values())
 
-        # self.D = self.get_distances(bags)
-
+        self.Y = np.array([
+            self._extract_labels(bag)
+            for bag in self.bags
+        ])
 
     def make_prediction_internal(self, bag):
-        """
-        Predict the bag distance with training bag 
+        """Predict the labels of a bag.
 
         Parameters
         ----------
-        bag
+        bag : Bag
+            Bag to classify.
+
+        Returns
+        -------
+        numpy.ndarray
+            Binary label prediction.
         """
-        label_counts, nn_labels = self._get_neighbor_label_counts(bag)
+        label_counts, neighbour_labels = (
+            self._get_neighbor_label_counts(bag)
+        )
 
-        prediction = (label_counts >= (self.k / 2)).astype(int)
+        prediction = (
+            label_counts >= (self.k / 2)
+        ).astype(int)
 
-        prediction = self._apply_extension(prediction, label_counts, nn_labels)
+        return self._apply_extension(
+            prediction,
+            label_counts,
+            neighbour_labels,
+        )
 
-        return prediction
+    def predict_proba_bag(self, bag):
+        """Calculate label probabilities for a bag.
 
-
-    def _apply_extension(self, prediction, label_counts, nn_labels):
-        """
-        Choose the extension
+        The probability of a label is calculated as the proportion of
+        neighbours containing that label.
 
         Parameters
         ----------
-        prediction: type of prediction (NONE, EXTA, EXTB)
-        label_counts: counts of labels
-        nn_labels: nearst neighbor labels
+        bag : Bag
+            Bag to classify.
+
+        Returns
+        -------
+        numpy.ndarray
+            Probability for each label.
         """
-        # NONE: standart prediction
+        label_counts, _ = self._get_neighbor_label_counts(bag)
+
+        return label_counts / self.k
+
+    def _get_neighbor_label_counts(self, bag):
+        """Get label frequencies among the nearest neighbours.
+
+        Parameters
+        ----------
+        bag : Bag
+            Bag for which neighbours are searched.
+
+        Returns
+        -------
+        tuple
+            Label counts and neighbour label matrix.
+        """
+        distances = []
+
+        for index, training_bag in enumerate(self.bags):
+            distance = self.metric.distance(
+                bag,
+                training_bag,
+            )
+
+            distances.append((index, distance))
+
+        distances.sort(key=lambda item: item[1])
+
+        neighbour_indices = [
+            index
+            for index, _ in distances[:self.k]
+        ]
+
+        neighbour_labels = self.Y[neighbour_indices]
+
+        label_counts = np.sum(
+            neighbour_labels,
+            axis=0,
+        )
+
+        return label_counts, neighbour_labels
+
+    def _apply_extension(
+        self,
+        prediction,
+        label_counts,
+        neighbour_labels,
+    ):
+        """Apply the selected MIMLBRkNN extension.
+
+        Parameters
+        ----------
+        prediction : numpy.ndarray
+            Initial binary prediction.
+        label_counts : numpy.ndarray
+            Number of neighbours containing each label.
+        neighbour_labels : numpy.ndarray
+            Labels of the nearest neighbours.
+
+        Returns
+        -------
+        numpy.ndarray
+            Final binary prediction.
+        """
         if self.extension == ExtensionType.NONE:
             return prediction
 
-        # EXTA: if there is not labels, take the label most frequent
         if self.extension == ExtensionType.EXTA:
             if np.sum(prediction) == 0:
                 max_label = np.argmax(label_counts)
                 prediction[max_label] = 1
+
             return prediction
 
-        # EXTB: take the average size of neighbor labels 
         if self.extension == ExtensionType.EXTB:
-            avg_size = int(np.round(np.mean(np.sum(nn_labels, axis=1))))
+            average_size = int(
+                np.round(
+                    np.mean(
+                        np.sum(
+                            neighbour_labels,
+                            axis=1,
+                        )
+                    )
+                )
+            )
 
-            if avg_size == 0:
+            if average_size == 0:
                 return prediction
-            # coger las labels más frecuentes
-            top_labels = np.argsort(label_counts)[::-1][:avg_size]
 
-            new_pred = np.zeros_like(prediction)
-            new_pred[top_labels] = 1
+            top_labels = np.argsort(
+                label_counts
+            )[::-1][:average_size]
 
-            return new_pred
+            extended_prediction = np.zeros_like(
+                prediction
+            )
+
+            extended_prediction[top_labels] = 1
+
+            return extended_prediction
 
         return prediction
 
-
-    def predict_batch(self, bags):
-        return np.array([self.predict(bag) for bag in bags])
-
-
-    def build_internal(self, training_set):
-        """
-        Method to train dataset
+    @staticmethod
+    def _extract_labels(bag):
+        """Extract the bag-level multilabel representation.
 
         Parameters
         ----------
-        training_set: dataset to train
+        bag : Bag
+            Bag from which labels are extracted.
+
+        Returns
+        -------
+        numpy.ndarray
+            Binary label vector.
         """
-        self.bags = list(training_set.data.values())
+        labels = bag.get_labels()
 
-        def extract_labels(bag):
-                labels = bag.get_labels()
-                if len(labels.shape) == 2:
-                    return labels[0]
-                return labels
-        
-        self.Y = np.array([extract_labels(b) for b in self.bags])
+        if labels.ndim == 2:
+            return labels[0]
 
-        self.fit(self.bags, self.Y)
-
-        self.trained = True
-
-
-    # def make_prediction_internal(self, instance):
-    #     """
-    #     Method to predict the distance
-    #     """
-    #     return self.predict(instance)
-
+        return labels
 
     def get_extension(self):
+        """Return the configured extension."""
         return self.extension
 
-
     def set_extension(self, extension):
+        """Set the extension used by the classifier.
+
+        Parameters
+        ----------
+        extension : ExtensionType
+            New extension.
+        """
         self.extension = extension
-
-    def _get_neighbor_label_counts(self, bag):
-        distances = []
-
-        for i in range(len(self.bags)):
-            d = self.metric.distance(bag, self.bags[i])
-            distances.append((i, d))
-
-        distances.sort(key=lambda x: x[1])
-
-        nn_idx = [idx for idx, _ in distances[:self.k]]
-
-        nn_labels = self.Y[nn_idx]
-
-        label_counts = np.sum(nn_labels, axis=0)
-
-        return label_counts, nn_labels
-
-    def predict_proba_bag(self, bag):
-        label_counts, _ = self._get_neighbor_label_counts(bag)
-        return label_counts / self.k
-
-    def predict_proba(self, dataset_test):
-        if not self.trained:
-            raise Exception(
-                "The classifier is not trained. You need to call fit before predict anything"
-            )
-
-        test_bags = list(dataset_test.data.values())
-
-        return np.array([
-            self.predict_proba_bag(bag)
-            for bag in test_bags
-        ])

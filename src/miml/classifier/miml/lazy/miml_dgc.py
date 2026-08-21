@@ -1,34 +1,37 @@
 import numpy as np
 
 from .multi_instance_multi_label_knn import MultiInstanceMultiLabelKNN
-from ....core.average_hausdorff import AverageHausdorff
+
 
 class MIMLDGC(MultiInstanceMultiLabelKNN):
+    """Multi-Instance Multi-Label Data Gravitation Classification.
+
+    Parameters
+    ----------
+    num_of_neighbours : int, default=10
+        Number of nearest neighbours.
+    metric : HausdorffDistance, optional
+        Distance metric used to compare bags.
+    extension : bool, default=False
+        If ``True``, all neighbours at the same distance as the
+        kth neighbour are included.
     """
-    Class to represent Multi instance Multi Label Data Gravitation Classification K Nearest Neighbors
-    """
-    def __init__(self, num_of_neighbours=10, metric=None, extension=False):
-        """
-        Constructor of the class MIMLDGCkNN
 
-        Parameters
-        ----------
-        metric: the distance metric between bags
-        num_of_neighbours: number of neighbours
-        extension: type of extension (NONE, EXTA, EXTB)
-        """
+    def __init__(
+        self,
+        num_of_neighbours=10,
+        metric=None,
+        extension=False,
+    ):
+        super().__init__(metric)
 
-        super().__init__(metric, num_of_neighbours)
-
-        if metric == None:
-            metric = AverageHausdorff()
         self.k = num_of_neighbours
-        self.metric = metric 
         self.extension = extension
 
         self.bags = None
         self.Y = None
 
+        self.D = None
         self.NGC = None
         self.weights = None
         self.densities = None
@@ -36,231 +39,293 @@ class MIMLDGC(MultiInstanceMultiLabelKNN):
         self.weight_max = -np.inf
         self.weight_min = np.inf
 
-
-    def fit(self, bags):
-        """
-        Training the classifier
-
-        Parameters
-        ----------
-
-        bags: list of Bag
-        """
-
-        n = len(bags)
-
-        self.D = self.get_distances(bags)
-
-        self.NGC = np.zeros(n)
-        self.weights = np.zeros(n)
-        self.densities = np.zeros(n)
-
-        for i in range(n):
-            neighbors = self._get_knn(i)
-            self._compute_weight_density(i, neighbors)
-
-        for i in range(n):
-            if self.weight_max != self.weight_min:
-                self.weights[i] = (self.weights[i] - self.weight_min) / (self.weight_max - self.weight_min)
-            else:
-                self.weights[i] = 0
-
-            self.NGC[i] = self.densities[i] ** self.weights[i]
-
-        self.trained = True
-
-
     def build_internal(self, training_set):
-        """
-        Method to train dataset
+        """Train the DGC classifier.
 
         Parameters
         ----------
-        training_set: dataset to train
+        training_set : Dataset
+            Dataset used for training.
         """
         self.bags = list(training_set.data.values())
 
         self.Y = np.array([
-            bag.get_labels()[0] for bag in self.bags
+            np.max(
+                bag.get_labels(),
+                axis=0,
+            )
+            for bag in self.bags
         ])
 
-        self.fit(self.bags)
+        self._fit()
 
+    def _fit(self):
+        """Calculate the DGC model parameters."""
+        n_bags = len(self.bags)
+
+        self.D = self.get_distances(self.bags)
+
+        self.NGC = np.zeros(n_bags)
+        self.weights = np.zeros(n_bags)
+        self.densities = np.zeros(n_bags)
+
+        for index in range(n_bags):
+            neighbours = self._get_knn(index)
+
+            self._compute_weight_density(
+                index,
+                neighbours,
+            )
+
+        for index in range(n_bags):
+            if self.weight_max != self.weight_min:
+                self.weights[index] = (
+                    self.weights[index] - self.weight_min
+                ) / (
+                    self.weight_max - self.weight_min
+                )
+            else:
+                self.weights[index] = 0.0
+
+            self.NGC[index] = (
+                self.densities[index]
+                ** self.weights[index]
+            )
 
     def make_prediction_internal(self, bag):
-        """
-        Predict the bag distance with training bag 
+        """Predict the labels of a bag.
 
         Parameters
         ----------
-        bag
+        bag : Bag
+            Bag to classify.
+
+        Returns
+        -------
+        numpy.ndarray
+            Binary label prediction.
         """
-        distances = []
+        probabilities = self.predict_proba_bag(bag)
 
-        for i in range(len(self.bags)):
-            d = self.metric.distance(bag, self.bags[i])
-            distances.append((i, d))
+        return (probabilities > 0.5).astype(int)
 
-        distances.sort(key=lambda x: x[1])
+    def predict_proba_bag(self, bag):
+        """Calculate label confidence values for a bag.
 
-        if not self.extension:
-            neighbors = distances[:self.k]
-        else:
-            kth_dist = distances[self.k - 1][1]
-            neighbors = [pair for pair in distances if pair[1] <= kth_dist]
+        Parameters
+        ----------
+        bag : Bag
+            Bag to classify.
 
-        k = len(neighbors)
+        Returns
+        -------
+        numpy.ndarray
+            Confidence value for each label.
+        """
+        neighbours = self._get_prediction_neighbours(bag)
 
-        gforce = np.zeros(k)
+        gravity = np.zeros(len(neighbours))
 
-        for idx, (i, d) in enumerate(neighbors):
-            if d == 0:
-                d = 1e-10
-            gforce[idx] = self.NGC[i] / (d ** 2)
+        for index, (bag_index, distance) in enumerate(neighbours):
+            if distance == 0:
+                distance = 1e-10
+
+            gravity[index] = (
+                self.NGC[bag_index]
+                / (distance ** 2)
+            )
 
         n_labels = self.Y.shape[1]
-        bipartition = np.zeros(n_labels, dtype=int)
         confidence = np.zeros(n_labels)
 
-        for l in range(n_labels):
-            pos = 0
-            neg = 0
+        for label in range(n_labels):
+            positive = 0.0
+            negative = 0.0
 
-            for idx, (i, _) in enumerate(neighbors):
-                if self.Y[i][l] == 1:
-                    pos += gforce[idx]
+            for index, (bag_index, _) in enumerate(neighbours):
+                if self.Y[bag_index][label] == 1:
+                    positive += gravity[index]
                 else:
-                    neg += gforce[idx]
+                    negative += gravity[index]
 
-            if pos > neg:
-                bipartition[l] = 1
+            total = positive + negative
 
-            if (pos + neg) > 0:
-                confidence[l] = pos / (pos + neg)
+            if total > 0:
+                confidence[label] = positive / total
 
-        return bipartition, confidence
+        return confidence
 
-    def _get_knn(self, i):
-        """
-        Get k neareast neighbours between bags
+    def _get_prediction_neighbours(self, bag):
+        """Find neighbours used for prediction.
 
-        ParametersParameters:
+        Parameters
         ----------
-        i: number of instance
+        bag : Bag
+            Test bag.
+
+        Returns
+        -------
+        list[tuple]
+            Pairs containing training-bag indices and distances.
         """
         distances = []
 
-        for j in range(len(self.bags)):
-            if i == j:
-                continue
+        for index, training_bag in enumerate(self.bags):
+            distance = self.metric.distance(
+                bag,
+                training_bag,
+            )
 
-            d = self.D[i][j]
-            #d = self.metric.distance(self.bags[i], self.bags[j])
-            distances.append((j, d))
+            distances.append((index, distance))
 
-        distances.sort(key=lambda x: x[1])
+        distances.sort(key=lambda item: item[1])
 
         if not self.extension:
-            return [idx for idx, _ in distances[:self.k]]
-        else:
-            kth = distances[self.k - 1][1]
-            return [idx for idx, d in distances if d <= kth]
-        
-        
-    def _label_distance(self, i, j):
-        """
-        Get distance between labels
+            return distances[:self.k]
+
+        kth_distance = distances[self.k - 1][1]
+
+        return [
+            pair
+            for pair in distances
+            if pair[1] <= kth_distance
+        ]
+
+    def _get_knn(self, index):
+        """Get the neighbours of a training bag.
+
+        The bag itself is excluded from the neighbour set.
 
         Parameters
         ----------
-        i, j: number of instances
-        """
-        return np.mean(self.Y[i] != self.Y[j])
-    
+        index : int
+            Index of the training bag.
 
-    def _compute_weight_density(self, i, neighbors):
+        Returns
+        -------
+        list[int]
+            Indices of the nearest neighbours.
         """
-        Set compute neighbours density and weight of an instance
-        
+        distances = []
+
+        for neighbour_index in range(len(self.bags)):
+            if neighbour_index == index:
+                continue
+
+            distances.append(
+                (
+                    neighbour_index,
+                    self.D[index][neighbour_index],
+                )
+            )
+
+        distances.sort(key=lambda item: item[1])
+
+        if not self.extension:
+            return [
+                neighbour_index
+                for neighbour_index, _ in distances[:self.k]
+            ]
+
+        kth_distance = distances[self.k - 1][1]
+
+        return [
+            neighbour_index
+            for neighbour_index, distance in distances
+            if distance <= kth_distance
+        ]
+
+    def _label_distance(self, index_1, index_2):
+        """Calculate the distance between two label vectors.
+
         Parameters
         ----------
-        i: number of instance
-        neighbors: list of neighbours
+        index_1 : int
+            First bag index.
+        index_2 : int
+            Second bag index.
+
+        Returns
+        -------
+        float
+            Fraction of different labels.
         """
-        weight = 1
-        density = 0
+        return np.mean(
+            self.Y[index_1] != self.Y[index_2]
+        )
 
-        PdisY = 0
-        PdisF = 0
-        PdisY_disF = 0
+    def _compute_weight_density(self, index, neighbours):
+        """Calculate density and weight for a training bag.
 
-        k = len(neighbors)
+        Parameters
+        ----------
+        index : int
+            Index of the bag.
+        neighbours : list[int]
+            Indices of neighbouring bags.
+        """
+        weight = 1.0
+        density = 0.0
 
-        for j in neighbors:
-            dl = self._label_distance(i, j)
-            df = self.metric.distance(self.bags[i], self.bags[j])
+        p_dis_y = 0.0
+        p_dis_f = 0.0
+        p_dis_y_dis_f = 0.0
 
-            if df == 0:
-                continue 
+        n_neighbours = len(neighbours)
 
-            density += (1 - dl) / df
+        for neighbour in neighbours:
+            label_distance = self._label_distance(
+                index,
+                neighbour,
+            )
 
-            PdisY += dl
-            PdisF += df
-            PdisY_disF += dl * df
+            feature_distance = self.metric.distance(
+                self.bags[index],
+                self.bags[neighbour],
+            )
 
-        density = 1 + density
+            if feature_distance == 0:
+                continue
 
-        PdisY /= k
-        PdisF /= k
-        PdisY_disF /= k
+            density += (
+                (1.0 - label_distance)
+                / feature_distance
+            )
 
-        if PdisY == 0 or PdisY == 1:
-            weight = 0
+            p_dis_y += label_distance
+            p_dis_f += feature_distance
+            p_dis_y_dis_f += (
+                label_distance * feature_distance
+            )
+
+        density += 1.0
+
+        if n_neighbours > 0:
+            p_dis_y /= n_neighbours
+            p_dis_f /= n_neighbours
+            p_dis_y_dis_f /= n_neighbours
+
+        if p_dis_y == 0 or p_dis_y == 1:
+            weight = 0.0
         else:
-            weight = ((PdisY_disF * PdisF) / PdisY) - (
-                ((1 - PdisY_disF) * PdisF) / (1 - PdisY)
+            weight = (
+                (p_dis_y_dis_f * p_dis_f) / p_dis_y
+                - (
+                    (1.0 - p_dis_y_dis_f)
+                    * p_dis_f
+                    / (1.0 - p_dis_y)
+                )
             )
 
-        self.weight_max = max(self.weight_max, weight)
-        self.weight_min = min(self.weight_min, weight)
+        self.weight_max = max(
+            self.weight_max,
+            weight,
+        )
 
-        self.weights[i] = weight
-        self.densities[i] = density
+        self.weight_min = min(
+            self.weight_min,
+            weight,
+        )
 
-    def get_bag_labels(bag):
-        return np.max(bag.get_labels(), axis=0)
-    
-    def evaluate(self, dataset_test):
-
-        if not self.trained:
-            raise Exception(
-                "The classifier is not trained. You need to call fit before predict anything"
-            )
-
-        test_bags = list(dataset_test.data.values())
-
-        predictions = []
-
-        for bag in test_bags:
-            bipartition, _ = self.predict(bag)
-            predictions.append(bipartition)
-
-        return np.array(predictions)
-    
-    def predict_proba(self, dataset_test):
-
-        if not self.trained:
-            raise Exception(
-                "The classifier is not trained. You need to call fit before predict anything"
-            )
-
-        test_bags = list(dataset_test.data.values())
-
-        probabilities = []
-
-        for bag in test_bags:
-            _, confidence = self.predict(bag)
-            probabilities.append(confidence)
-
-        return np.array(probabilities)
+        self.weights[index] = weight
+        self.densities[index] = density
