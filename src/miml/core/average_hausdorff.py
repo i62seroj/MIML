@@ -1,31 +1,52 @@
 import numpy as np
+
 from .hausdorff_distance import HausdorffDistance
 
 
 class AverageHausdorff(HausdorffDistance):
-    """
-    Average Hausdorff distance (bidirectional)
+    """Bidirectional Average Hausdorff distance between two bags.
+
+    The distance is calculated by finding the closest instance in the
+    other bag for every instance in each direction. The resulting
+    distances are averaged and then normalized to the range ``[0, 1)``.
+
+    A small positive value is returned instead of zero to improve
+    numerical stability in algorithms that use the distance as a
+    denominator.
     """
 
     def distance(self, bag1, bag2):
-        D = self._distance_matrix(bag1, bag2)
+        """Calculate the Average Hausdorff distance between two bags.
 
-        min_X = np.min(D, axis=1)
-        min_Y = np.min(D, axis=0)
+        Parameters
+        ----------
+        bag1 : Bag
+            First bag.
+        bag2 : Bag
+            Second bag.
 
-        d = (np.sum(min_X) + np.sum(min_Y)) / (len(min_X) + len(min_Y))
+        Returns
+        -------
+        float
+            Normalized bidirectional Average Hausdorff distance.
+        """
+        distance_matrix = self._distance_matrix(bag1, bag2)
 
-        # normalización + estabilidad
-        d = d / (1 + d)
+        # Minimum distance from each instance in bag1 to bag2.
+        min_distances_1 = np.min(distance_matrix, axis=1)
 
-        return max(d, 1e-10)
-    # def distance(self, bag1, bag2):
-    #     D = self._distance_matrix(bag1, bag2)
+        # Minimum distance from each instance in bag2 to bag1.
+        min_distances_2 = np.min(distance_matrix, axis=0)
 
-    #     min_X = np.min(D, axis=1)
-    #     min_Y = np.min(D, axis=0)
+        # Average the minimum distances in both directions.
+        distance = (
+            np.sum(min_distances_1) + np.sum(min_distances_2)
+        ) / (
+            len(min_distances_1) + len(min_distances_2)
+        )
 
-    #     sum_U = np.sum(min_X)
-    #     sum_V = np.sum(min_Y)
+        # Normalize the distance to avoid unbounded values.
+        distance = distance / (1.0 + distance)
 
-    #     return (sum_U + sum_V) / (len(min_X) + len(min_Y))
+        # Avoid returning exactly zero for numerical stability.
+        return max(distance, 1e-10)
