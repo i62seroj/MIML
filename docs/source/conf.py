@@ -14,15 +14,16 @@ sys.path.insert(0, os.path.abspath('../../src'))
 sys.path.insert(0, os.path.abspath('../../src/'))
 
 project = 'MIML Library'
-copyright = '2024, Damian'
-author = 'Damian Martinez'
+copyright = '2024-2026, Damian'
+author = 'Damian Martinez and Juan Jose Serrano'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
     'sphinx.ext.autodoc',  # Core library for html generation from docstrings
-    'sphinx.ext.autosummary',  # Create neat summary tables
+    'sphinx.ext.autosummary',
+    'sphinx.ext.napoleon',  # Create neat summary tables
 ]
 autosummary_generate = True  # Turn on sphinx.ext.autosummary
 

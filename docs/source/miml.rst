@@ -1,6 +1,10 @@
 MIML Libray
 ==============================================
 
+Original project by Damian Martinez.
+
+Extended and maintained by Juan Jose Serrano.
+
 .. toctree::
    :maxdepth: 2
 
@@ -8,3 +12,4 @@ MIML Libray
    data/index
    report/index
    transformation/index
+   core/index

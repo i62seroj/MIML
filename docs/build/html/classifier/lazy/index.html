@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MIML Lazy Classifiers &#8212; MIML Library  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classifier/lazy/index';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data" href="../../data/index.html" />
+    <link rel="prev" title="miml.classifier.mimlTOmi.miml_to_mi_lp_classifier.MIMLtoMILPClassifier" href="../mimlTOmi/_autosummary/miml.classifier.mimlTOmi.miml_to_mi_lp_classifier.MIMLtoMILPClassifier.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../miml.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">MIML Library  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Classifier</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mi/index.html">mi</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../mi/apr_classifier.html">APRClassifier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../mi/_autosummary/miml.classifier.mi.apr_classifier.APRClassifier.html">miml.classifier.mi.apr_classifier.APRClassifier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../mi/mi_wrapper_classifier.html">MIWrapperClassifier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../mi/_autosummary/miml.classifier.mi.mi_wrapper_classifier.MIWrapperClassifier.html">miml.classifier.mi.mi_wrapper_classifier.MIWrapperClassifier</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../miml_classifier.html">MIMLClassifier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../_autosummary/miml.classifier.miml_classifier.MIMLClassifier.html">miml.classifier.miml_classifier.MIMLClassifier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mimlTOml/index.html">mimlTOml</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../mimlTOml/miml_to_ml_classifier.html">MIMLtoMLClassifier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../mimlTOml/_autosummary/miml.classifier.mimlTOml.miml_to_ml_classifier.MIMLtoMLClassifier.html">miml.classifier.mimlTOml.miml_to_ml_classifier.MIMLtoMLClassifier</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mimlTOmi/index.html">mimlTOmi</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../mimlTOmi/miml_to_mi_classifier.html">MIMLtoMIClassifier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../mimlTOmi/_autosummary/miml.classifier.mimlTOmi.miml_to_mi_classifier.MIMLtoMIClassifier.html">miml.classifier.mimlTOmi.miml_to_mi_classifier.MIMLtoMIClassifier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../mimlTOmi/miml_to_mi_br_classifier.html">MIMLtoMIBRClassifier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../mimlTOmi/_autosummary/miml.classifier.mimlTOmi.miml_to_mi_br_classifier.MIMLtoMIBRClassifier.html">miml.classifier.mimlTOmi.miml_to_mi_br_classifier.MIMLtoMIBRClassifier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../mimlTOmi/miml_to_mi_lp_classifier.html">MIMLtoMILPClassifier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../mimlTOmi/_autosummary/miml.classifier.mimlTOmi.miml_to_mi_lp_classifier.MIMLtoMILPClassifier.html">miml.classifier.mimlTOmi.miml_to_mi_lp_classifier.MIMLtoMILPClassifier</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">MIML Lazy Classifiers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../data/index.html">Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../data/instance.html">Instance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../data/_autosummary/miml.data.instance.Instance.html">miml.data.instance.Instance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../data/bag.html">Bag</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html">miml.data.bag.Bag</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../data/miml_dataset.html">MIMLDataset</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../data/_autosummary/miml.data.miml_dataset.MIMLDataset.html">miml.data.miml_dataset.MIMLDataset</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data/dataset_utils.html">Dataset utils</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../report/index.html">Report</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../report/report.html">Report</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../report/_autosummary/miml.report.report.Report.html">miml.report.report.Report</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../transformation/index.html">Transformation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../transformation/mimlTOmi/index.html">mimlTOmi</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../transformation/mimlTOmi/binary_relevance_transformation.html">BinaryRelevanceTransformation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../transformation/mimlTOmi/_autosummary/miml.transformation.mimlTOmi.binary_relevance_transformation.BinaryRelevanceTransformation.html">miml.transformation.mimlTOmi.binary_relevance_transformation.BinaryRelevanceTransformation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../transformation/mimlTOmi/label_powerset_transformation.html">LabelPowersetTransformation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../transformation/mimlTOmi/_autosummary/miml.transformation.mimlTOmi.label_powerset_transformation.LabelPowersetTransformation.html">miml.transformation.mimlTOmi.label_powerset_transformation.LabelPowersetTransformation</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../transformation/mimlTOml/index.html">mimlTOml</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../transformation/mimlTOml/arithmetic.html">ArithmeticTransformation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../transformation/mimlTOml/_autosummary/miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation.html">miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../transformation/mimlTOml/geometric.html">GeometricTransformation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../transformation/mimlTOml/_autosummary/miml.transformation.mimlTOml.geometric.GeometricTransformation.html">miml.transformation.mimlTOml.geometric.GeometricTransformation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../transformation/mimlTOml/minmax.html">MinMaxTransformation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../transformation/mimlTOml/_autosummary/miml.transformation.mimlTOml.minmax.MinMaxTransformation.html">miml.transformation.mimlTOml.minmax.MinMaxTransformation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../transformation/mimlTOml/mimltomltransformation.html">MIMLtoMLTransformation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../transformation/mimlTOml/_autosummary/miml.transformation.mimlTOml.miml_to_ml_transformation.MIMLtoMLTransformation.html">miml.transformation.mimlTOml.miml_to_ml_transformation.MIMLtoMLTransformation</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/index.html">Distances</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/classifier/lazy/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MIML Lazy Classifiers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miml-knn">MIML-kNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN"><code class="docutils literal notranslate"><span class="pre">MIMLkNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN.build_internal"><code class="docutils literal notranslate"><span class="pre">MIMLkNN.build_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN.make_prediction_internal"><code class="docutils literal notranslate"><span class="pre">MIMLkNN.make_prediction_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN.predict_proba_bag"><code class="docutils literal notranslate"><span class="pre">MIMLkNN.predict_proba_bag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miml-br-knn">MIML-BR-kNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.build_internal"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN.build_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.get_extension"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN.get_extension()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.make_prediction_internal"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN.make_prediction_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.predict_proba_bag"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN.predict_proba_bag()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.set_extension"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN.set_extension()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miml-dgc">MIML-DGC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC"><code class="docutils literal notranslate"><span class="pre">MIMLDGC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC.build_internal"><code class="docutils literal notranslate"><span class="pre">MIMLDGC.build_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC.make_prediction_internal"><code class="docutils literal notranslate"><span class="pre">MIMLDGC.make_prediction_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC.predict_proba_bag"><code class="docutils literal notranslate"><span class="pre">MIMLDGC.predict_proba_bag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miml-map-knn">MIML-MAP-kNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN"><code class="docutils literal notranslate"><span class="pre">MIMLMAPkNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.build_internal"><code class="docutils literal notranslate"><span class="pre">MIMLMAPkNN.build_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.make_prediction_internal"><code class="docutils literal notranslate"><span class="pre">MIMLMAPkNN.make_prediction_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.predict_proba_bag"><code class="docutils literal notranslate"><span class="pre">MIMLMAPkNN.predict_proba_bag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-instance-multi-label-knn">Multi-Instance Multi-Label kNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.build"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.build()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.build_internal"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.build_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.evaluate"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.evaluate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.get_distances"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.get_distances()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.make_prediction_internal"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.make_prediction_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.predict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict_proba"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.predict_proba()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict_proba_bag"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.predict_proba_bag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="miml-lazy-classifiers">
+<h1>MIML Lazy Classifiers<a class="headerlink" href="#miml-lazy-classifiers" title="Link to this heading">#</a></h1>
+<section id="miml-knn">
+<h2>MIML-kNN<a class="headerlink" href="#miml-knn" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_knn.MIMLkNN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">miml.classifier.miml.lazy.miml_knn.</span></span><span class="sig-name descname"><span class="pre">MIMLkNN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_references</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_citers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN" title="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN</span></code></a></p>
+<p>Multi-Instance Multi-Label kNN classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_references</strong> (<em>int</em><em>, </em><em>default=1</em>) – Number of references used for each training bag.</p></li>
+<li><p><strong>num_citers</strong> (<em>int</em><em>, </em><em>default=1</em>) – Number of citers considered for each bag.</p></li>
+<li><p><strong>metric</strong> (<a class="reference internal" href="../../core/index.html#miml.core.hausdorff_distance.HausdorffDistance" title="miml.core.hausdorff_distance.HausdorffDistance"><em>HausdorffDistance</em></a><em>, </em><em>optional</em>) – Distance metric used to compare bags.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_knn.MIMLkNN.build_internal">
+<span class="sig-name descname"><span class="pre">build_internal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">training_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN.build_internal" title="Link to this definition">#</a></dt>
+<dd><p>Train the MIMLkNN classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training_set</strong> (<em>Dataset</em>) – Dataset used for training.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_knn.MIMLkNN.make_prediction_internal">
+<span class="sig-name descname"><span class="pre">make_prediction_internal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN.make_prediction_internal" title="Link to this definition">#</a></dt>
+<dd><p>Predict the labels of a bag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bag</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Binary label prediction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_knn.MIMLkNN.predict_proba_bag">
+<span class="sig-name descname"><span class="pre">predict_proba_bag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN.predict_proba_bag" title="Link to this definition">#</a></dt>
+<dd><p>Calculate confidence values for a bag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bag</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Confidence values for each label.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="miml-br-knn">
+<h2>MIML-BR-kNN<a class="headerlink" href="#miml-br-knn" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">miml.classifier.miml.lazy.miml_br_knn.</span></span><span class="sig-name descname"><span class="pre">MIMLBRkNN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_of_neighbours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ExtensionType.NONE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN" title="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN</span></code></a></p>
+<p>Multi-Instance Multi-Label Binary Relevance kNN classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_of_neighbours</strong> (<em>int</em><em>, </em><em>default=10</em>) – Number of nearest neighbours used for prediction.</p></li>
+<li><p><strong>metric</strong> (<a class="reference internal" href="../../core/index.html#miml.core.hausdorff_distance.HausdorffDistance" title="miml.core.hausdorff_distance.HausdorffDistance"><em>HausdorffDistance</em></a><em>, </em><em>optional</em>) – Distance metric used to compare bags.</p></li>
+<li><p><strong>extension</strong> (<em>ExtensionType</em><em>, </em><em>default=ExtensionType.NONE</em>) – Extension applied to the standard binary relevance prediction.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.build_internal">
+<span class="sig-name descname"><span class="pre">build_internal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">training_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.build_internal" title="Link to this definition">#</a></dt>
+<dd><p>Prepare the training data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training_set</strong> (<em>Dataset</em>) – Dataset used for training.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.get_extension">
+<span class="sig-name descname"><span class="pre">get_extension</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.get_extension" title="Link to this definition">#</a></dt>
+<dd><p>Return the configured extension.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.make_prediction_internal">
+<span class="sig-name descname"><span class="pre">make_prediction_internal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.make_prediction_internal" title="Link to this definition">#</a></dt>
+<dd><p>Predict the labels of a bag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bag</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Binary label prediction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.predict_proba_bag">
+<span class="sig-name descname"><span class="pre">predict_proba_bag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.predict_proba_bag" title="Link to this definition">#</a></dt>
+<dd><p>Calculate label probabilities for a bag.</p>
+<p>The probability of a label is calculated as the proportion of
+neighbours containing that label.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bag</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probability for each label.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.set_extension">
+<span class="sig-name descname"><span class="pre">set_extension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extension</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.set_extension" title="Link to this definition">#</a></dt>
+<dd><p>Set the extension used by the classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>extension</strong> (<em>ExtensionType</em>) – New extension.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="miml-dgc">
+<h2>MIML-DGC<a class="headerlink" href="#miml-dgc" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_dgc.MIMLDGC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">miml.classifier.miml.lazy.miml_dgc.</span></span><span class="sig-name descname"><span class="pre">MIMLDGC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_of_neighbours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN" title="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN</span></code></a></p>
+<p>Multi-Instance Multi-Label Data Gravitation Classification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_of_neighbours</strong> (<em>int</em><em>, </em><em>default=10</em>) – Number of nearest neighbours.</p></li>
+<li><p><strong>metric</strong> (<a class="reference internal" href="../../core/index.html#miml.core.hausdorff_distance.HausdorffDistance" title="miml.core.hausdorff_distance.HausdorffDistance"><em>HausdorffDistance</em></a><em>, </em><em>optional</em>) – Distance metric used to compare bags.</p></li>
+<li><p><strong>extension</strong> (<em>bool</em><em>, </em><em>default=False</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, all neighbours at the same distance as the
+kth neighbour are included.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_dgc.MIMLDGC.build_internal">
+<span class="sig-name descname"><span class="pre">build_internal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">training_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC.build_internal" title="Link to this definition">#</a></dt>
+<dd><p>Train the DGC classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training_set</strong> (<em>Dataset</em>) – Dataset used for training.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_dgc.MIMLDGC.make_prediction_internal">
+<span class="sig-name descname"><span class="pre">make_prediction_internal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC.make_prediction_internal" title="Link to this definition">#</a></dt>
+<dd><p>Predict the labels of a bag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bag</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Binary label prediction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_dgc.MIMLDGC.predict_proba_bag">
+<span class="sig-name descname"><span class="pre">predict_proba_bag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC.predict_proba_bag" title="Link to this definition">#</a></dt>
+<dd><p>Calculate label confidence values for a bag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bag</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Confidence value for each label.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="miml-map-knn">
+<h2>MIML-MAP-kNN<a class="headerlink" href="#miml-map-knn" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">miml.classifier.miml.lazy.miml_map_knn.</span></span><span class="sig-name descname"><span class="pre">MIMLMAPkNN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_of_neighbours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN" title="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN</span></code></a></p>
+<p>Multi-Instance Multi-Label MAP kNN classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_of_neighbours</strong> (<em>int</em><em>, </em><em>default=10</em>) – Number of neighbours used by the classifier.</p></li>
+<li><p><strong>metric</strong> (<a class="reference internal" href="../../core/index.html#miml.core.hausdorff_distance.HausdorffDistance" title="miml.core.hausdorff_distance.HausdorffDistance"><em>HausdorffDistance</em></a><em>, </em><em>optional</em>) – Distance metric used to compare bags.</p></li>
+<li><p><strong>smooth</strong> (<em>float</em><em>, </em><em>default=1.0</em>) – Laplace smoothing parameter.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.build_internal">
+<span class="sig-name descname"><span class="pre">build_internal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">training_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.build_internal" title="Link to this definition">#</a></dt>
+<dd><p>Train the MAP kNN classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training_set</strong> (<em>Dataset</em>) – Dataset used for training.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.make_prediction_internal">
+<span class="sig-name descname"><span class="pre">make_prediction_internal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.make_prediction_internal" title="Link to this definition">#</a></dt>
+<dd><p>Predict the labels of a bag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bag</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Binary label prediction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.predict_proba_bag">
+<span class="sig-name descname"><span class="pre">predict_proba_bag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.predict_proba_bag" title="Link to this definition">#</a></dt>
+<dd><p>Calculate label probabilities for a bag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bag</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probability for each label.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="multi-instance-multi-label-knn">
+<h2>Multi-Instance Multi-Label kNN<a class="headerlink" href="#multi-instance-multi-label-knn" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">miml.classifier.miml.lazy.multi_instance_multi_label_knn.</span></span><span class="sig-name descname"><span class="pre">MultiInstanceMultiLabelKNN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Base class for Multi-Instance Multi-Label kNN classifiers.</p>
+<p>This class provides the common functionality shared by MIML
+k-nearest-neighbour classifiers, including:</p>
+<ul class="simple">
+<li><p>Distance metric management.</p></li>
+<li><p>Model training interface.</p></li>
+<li><p>Single-bag prediction.</p></li>
+<li><p>Dataset evaluation.</p></li>
+<li><p>Probability prediction.</p></li>
+<li><p>Pairwise distance calculation.</p></li>
+</ul>
+<p>Subclasses are responsible for implementing the actual training
+procedure and the prediction logic.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">training_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.build" title="Link to this definition">#</a></dt>
+<dd><p>Train the classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training_set</strong> (<em>Dataset</em>) – Dataset used to train the classifier.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.build_internal">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_internal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">training_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.build_internal" title="Link to this definition">#</a></dt>
+<dd><p>Train the classifier.</p>
+<p>This method must be implemented by subclasses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training_set</strong> (<em>Dataset</em>) – Dataset used for training.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_test</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.evaluate" title="Link to this definition">#</a></dt>
+<dd><p>Predict labels for all bags in a test dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dataset_test</strong> (<em>Dataset</em>) – Dataset containing the bags to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Binary predictions with shape
+<code class="docutils literal notranslate"><span class="pre">(n_bags,</span> <span class="pre">n_labels)</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.get_distances">
+<span class="sig-name descname"><span class="pre">get_distances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.get_distances" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the pairwise distance matrix between bags.</p>
+<p>Only the upper triangular part is calculated explicitly.
+Since the distance matrix is symmetric, the other half is
+filled using the corresponding values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bags</strong> (<em>list</em>) – List of bags.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Symmetric pairwise distance matrix.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.make_prediction_internal">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_prediction_internal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.make_prediction_internal" title="Link to this definition">#</a></dt>
+<dd><p>Predict the labels of a single bag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>instance</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Binary label prediction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict" title="Link to this definition">#</a></dt>
+<dd><p>Predict the labels of a single bag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>instance</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Binary label prediction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict_proba">
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_test</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict_proba" title="Link to this definition">#</a></dt>
+<dd><p>Predict label probabilities for all bags in a dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dataset_test</strong> (<em>Dataset</em>) – Dataset containing the bags to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Label probabilities with shape
+<code class="docutils literal notranslate"><span class="pre">(n_bags,</span> <span class="pre">n_labels)</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict_proba_bag">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">predict_proba_bag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict_proba_bag" title="Link to this definition">#</a></dt>
+<dd><p>Predict label probabilities for a single bag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bag</strong> (<a class="reference internal" href="../../data/_autosummary/miml.data.bag.Bag.html#miml.data.bag.Bag" title="miml.data.bag.Bag"><em>Bag</em></a>) – Bag to classify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probability for each label.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../mimlTOmi/_autosummary/miml.classifier.mimlTOmi.miml_to_mi_lp_classifier.MIMLtoMILPClassifier.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">miml.classifier.mimlTOmi.miml_to_mi_lp_classifier.MIMLtoMILPClassifier</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../data/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miml-knn">MIML-kNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN"><code class="docutils literal notranslate"><span class="pre">MIMLkNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN.build_internal"><code class="docutils literal notranslate"><span class="pre">MIMLkNN.build_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN.make_prediction_internal"><code class="docutils literal notranslate"><span class="pre">MIMLkNN.make_prediction_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_knn.MIMLkNN.predict_proba_bag"><code class="docutils literal notranslate"><span class="pre">MIMLkNN.predict_proba_bag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miml-br-knn">MIML-BR-kNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.build_internal"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN.build_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.get_extension"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN.get_extension()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.make_prediction_internal"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN.make_prediction_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.predict_proba_bag"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN.predict_proba_bag()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_br_knn.MIMLBRkNN.set_extension"><code class="docutils literal notranslate"><span class="pre">MIMLBRkNN.set_extension()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miml-dgc">MIML-DGC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC"><code class="docutils literal notranslate"><span class="pre">MIMLDGC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC.build_internal"><code class="docutils literal notranslate"><span class="pre">MIMLDGC.build_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC.make_prediction_internal"><code class="docutils literal notranslate"><span class="pre">MIMLDGC.make_prediction_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_dgc.MIMLDGC.predict_proba_bag"><code class="docutils literal notranslate"><span class="pre">MIMLDGC.predict_proba_bag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miml-map-knn">MIML-MAP-kNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN"><code class="docutils literal notranslate"><span class="pre">MIMLMAPkNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.build_internal"><code class="docutils literal notranslate"><span class="pre">MIMLMAPkNN.build_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.make_prediction_internal"><code class="docutils literal notranslate"><span class="pre">MIMLMAPkNN.make_prediction_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.miml_map_knn.MIMLMAPkNN.predict_proba_bag"><code class="docutils literal notranslate"><span class="pre">MIMLMAPkNN.predict_proba_bag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-instance-multi-label-knn">Multi-Instance Multi-Label kNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.build"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.build()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.build_internal"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.build_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.evaluate"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.evaluate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.get_distances"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.get_distances()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.make_prediction_internal"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.make_prediction_internal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.predict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict_proba"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.predict_proba()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miml.classifier.miml.lazy.multi_instance_multi_label_knn.MultiInstanceMultiLabelKNN.predict_proba_bag"><code class="docutils literal notranslate"><span class="pre">MultiInstanceMultiLabelKNN.predict_proba_bag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Damian Martinez and Juan Jose Serrano
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024-2026, Damian.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
