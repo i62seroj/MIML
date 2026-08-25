@@ -27,5 +27,17 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+dependencies = [
+    "numpy",
+    "tabulate",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+docs = [
+    "sphinx",
+    "sphinx-book-theme",
+]
+
 [project.urls]
 Homepage = "https://github.com/i62seroj/miml"
