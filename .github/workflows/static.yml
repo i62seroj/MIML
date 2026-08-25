@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "github-pages"
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -31,19 +31,34 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install ".[docs]"
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+          pip install .
+          pip install sphinx sphinx-book-theme
 
       - name: Build documentation
         run: |
-          sphinx-build -b html docs/source docs/_build/html
+          sphinx-build -b html docs/source docs/build/html
+
+      - name: Check generated documentation
+        run: |
+          echo "======================================"
+          echo "Contenido de docs/build/html"
+          echo "======================================"
+          find docs/build/html -maxdepth 2 -type f | sort
+
+          echo ""
+          echo "======================================"
+          echo "Comprobando index.html"
+          echo "======================================"
+          test -f docs/build/html/index.html
+
+          echo ""
+          echo "index.html encontrado correctamente:"
+          ls -lh docs/build/html/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: docs/_build/html
+          path: docs/build/html
 
   deploy:
     needs: build
