@@ -1,209 +1,57 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Classifier}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}mi}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}APRClassifier}{1}{subsection.1.1.1}%
-\contentsline {subsubsection}{miml.classifier.mi.apr\_classifier.APRClassifier}{1}{subsubsection*.3}%
-\contentsline {paragraph}{Attributes}{1}{paragraph*.5}%
-\contentsline {paragraph}{References}{1}{paragraph*.6}%
-\contentsline {subparagraph}{Parameters}{2}{subparagraph*.8}%
-\contentsline {subparagraph}{Parameters}{2}{subparagraph*.10}%
-\contentsline {subparagraph}{Returns}{2}{subparagraph*.11}%
-\contentsline {subparagraph}{Parameters}{2}{subparagraph*.13}%
-\contentsline {subparagraph}{Returns}{2}{subparagraph*.14}%
-\contentsline {subsection}{\numberline {1.1.2}MIWrapperClassifier}{2}{subsection.1.1.2}%
-\contentsline {subsubsection}{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier}{3}{subsubsection*.15}%
-\contentsline {paragraph}{Attributes}{3}{paragraph*.17}%
-\contentsline {paragraph}{References}{3}{paragraph*.18}%
-\contentsline {subparagraph}{Parameters}{3}{subparagraph*.20}%
-\contentsline {subparagraph}{Parameters}{3}{subparagraph*.22}%
-\contentsline {subparagraph}{Returns}{4}{subparagraph*.23}%
-\contentsline {subparagraph}{Parameters}{4}{subparagraph*.25}%
-\contentsline {subparagraph}{Returns}{4}{subparagraph*.26}%
-\contentsline {section}{\numberline {1.2}MIMLClassifier}{4}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}miml.classifier.miml\_classifier.MIMLClassifier}{4}{subsection.1.2.1}%
-\contentsline {subsubsection}{Parameters}{4}{subsubsection*.29}%
-\contentsline {subsubsection}{Returns}{5}{subsubsection*.30}%
-\contentsline {subsubsection}{Parameters}{5}{subsubsection*.32}%
-\contentsline {subsubsection}{Parameters}{5}{subsubsection*.34}%
-\contentsline {subsubsection}{Returns}{5}{subsubsection*.36}%
-\contentsline {subsubsection}{Parameters}{5}{subsubsection*.38}%
-\contentsline {subsubsection}{Returns}{5}{subsubsection*.39}%
-\contentsline {subsubsection}{Parameters}{6}{subsubsection*.41}%
-\contentsline {subsubsection}{Returns}{6}{subsubsection*.42}%
+\contentsline {chapter}{\numberline {1}Classifier}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}mi}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}APRClassifier}{3}{subsection.1.1.1}%
+\contentsline {subsubsection}{miml.classifier.mi.apr\_classifier.APRClassifier}{3}{subsubsection*.3}%
+\contentsline {subsection}{\numberline {1.1.2}MIWrapperClassifier}{4}{subsection.1.1.2}%
+\contentsline {subsubsection}{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier}{4}{subsubsection*.9}%
+\contentsline {section}{\numberline {1.2}MIMLClassifier}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}miml.classifier.miml\_classifier.MIMLClassifier}{5}{subsection.1.2.1}%
 \contentsline {section}{\numberline {1.3}mimlTOml}{6}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}MIMLtoMLClassifier}{6}{subsection.1.3.1}%
-\contentsline {subsubsection}{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier}{6}{subsubsection*.43}%
-\contentsline {paragraph}{Parameters}{6}{paragraph*.46}%
-\contentsline {paragraph}{Returns}{6}{paragraph*.47}%
-\contentsline {paragraph}{Parameters}{7}{paragraph*.49}%
-\contentsline {paragraph}{Parameters}{7}{paragraph*.51}%
-\contentsline {paragraph}{Parameters}{7}{paragraph*.53}%
-\contentsline {paragraph}{Returns}{7}{paragraph*.54}%
-\contentsline {paragraph}{Parameters}{7}{paragraph*.56}%
-\contentsline {paragraph}{Returns}{7}{paragraph*.57}%
-\contentsline {paragraph}{Parameters}{8}{paragraph*.59}%
-\contentsline {paragraph}{Returns}{8}{paragraph*.60}%
+\contentsline {subsubsection}{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier}{6}{subsubsection*.22}%
 \contentsline {section}{\numberline {1.4}mimlTOmi}{8}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}MIMLtoMIClassifier}{8}{subsection.1.4.1}%
-\contentsline {subsubsection}{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier}{8}{subsubsection*.61}%
-\contentsline {paragraph}{Parameters}{8}{paragraph*.64}%
-\contentsline {paragraph}{Returns}{8}{paragraph*.65}%
-\contentsline {paragraph}{Parameters}{9}{paragraph*.67}%
-\contentsline {paragraph}{Parameters}{9}{paragraph*.69}%
-\contentsline {paragraph}{Parameters}{9}{paragraph*.71}%
-\contentsline {paragraph}{Returns}{9}{paragraph*.72}%
-\contentsline {paragraph}{Parameters}{9}{paragraph*.74}%
-\contentsline {paragraph}{Returns}{9}{paragraph*.75}%
-\contentsline {paragraph}{Parameters}{10}{paragraph*.77}%
-\contentsline {paragraph}{Returns}{10}{paragraph*.78}%
-\contentsline {subsection}{\numberline {1.4.2}MIMLtoMIBRClassifier}{10}{subsection.1.4.2}%
-\contentsline {subsubsection}{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier}{10}{subsubsection*.79}%
-\contentsline {paragraph}{Parameters}{10}{paragraph*.82}%
-\contentsline {paragraph}{Returns}{10}{paragraph*.83}%
-\contentsline {paragraph}{Parameters}{11}{paragraph*.85}%
-\contentsline {paragraph}{Parameters}{11}{paragraph*.87}%
-\contentsline {paragraph}{Parameters}{11}{paragraph*.89}%
-\contentsline {paragraph}{Returns}{11}{paragraph*.90}%
-\contentsline {paragraph}{Parameters}{11}{paragraph*.92}%
-\contentsline {paragraph}{Returns}{11}{paragraph*.93}%
-\contentsline {subsection}{\numberline {1.4.3}MIMLtoMILPClassifier}{12}{subsection.1.4.3}%
-\contentsline {subsubsection}{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier}{12}{subsubsection*.95}%
-\contentsline {paragraph}{Parameters}{12}{paragraph*.98}%
-\contentsline {paragraph}{Returns}{12}{paragraph*.99}%
-\contentsline {paragraph}{Parameters}{12}{paragraph*.101}%
-\contentsline {paragraph}{Parameters}{13}{paragraph*.103}%
-\contentsline {paragraph}{Parameters}{13}{paragraph*.105}%
-\contentsline {paragraph}{Returns}{13}{paragraph*.106}%
-\contentsline {paragraph}{Parameters}{13}{paragraph*.108}%
-\contentsline {paragraph}{Returns}{13}{paragraph*.109}%
-\contentsline {paragraph}{Parameters}{13}{paragraph*.111}%
-\contentsline {paragraph}{Returns}{14}{paragraph*.112}%
-\contentsline {chapter}{\numberline {2}Data}{15}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Instance}{15}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}miml.data.instance.Instance}{15}{subsection.2.1.1}%
-\contentsline {subsubsection}{Parameters}{15}{subsubsection*.115}%
-\contentsline {subsubsection}{Parameters}{15}{subsubsection*.117}%
-\contentsline {subsubsection}{Parameters}{16}{subsubsection*.119}%
-\contentsline {subsubsection}{Returns}{16}{subsubsection*.120}%
-\contentsline {subsubsection}{Returns}{16}{subsubsection*.122}%
-\contentsline {subsubsection}{Returns}{16}{subsubsection*.124}%
-\contentsline {subsubsection}{Returns}{16}{subsubsection*.126}%
-\contentsline {subsubsection}{Returns}{16}{subsubsection*.128}%
-\contentsline {subsubsection}{Returns}{17}{subsubsection*.130}%
-\contentsline {subsubsection}{Returns}{17}{subsubsection*.132}%
-\contentsline {subsubsection}{Returns}{17}{subsubsection*.134}%
-\contentsline {subsubsection}{Returns}{17}{subsubsection*.136}%
-\contentsline {subsubsection}{Returns}{17}{subsubsection*.138}%
-\contentsline {subsubsection}{Parameters}{18}{subsubsection*.140}%
-\contentsline {subsubsection}{Parameters}{18}{subsubsection*.142}%
-\contentsline {section}{\numberline {2.2}Bag}{18}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}miml.data.bag.Bag}{18}{subsection.2.2.1}%
-\contentsline {subsubsection}{Parameters}{18}{subsubsection*.146}%
-\contentsline {subsubsection}{Parameters}{19}{subsubsection*.148}%
-\contentsline {subsubsection}{Parameters}{19}{subsubsection*.150}%
-\contentsline {subsubsection}{Parameters}{19}{subsubsection*.152}%
-\contentsline {subsubsection}{Parameters}{19}{subsubsection*.154}%
-\contentsline {subsubsection}{Returns}{19}{subsubsection*.155}%
-\contentsline {subsubsection}{Returns}{19}{subsubsection*.157}%
-\contentsline {subsubsection}{Returns}{20}{subsubsection*.159}%
-\contentsline {subsubsection}{Returns}{20}{subsubsection*.161}%
-\contentsline {subsubsection}{Returns}{20}{subsubsection*.163}%
-\contentsline {subsubsection}{Parameters}{20}{subsubsection*.165}%
-\contentsline {subsubsection}{Returns}{20}{subsubsection*.166}%
-\contentsline {subsubsection}{Returns}{20}{subsubsection*.168}%
-\contentsline {subsubsection}{Returns}{21}{subsubsection*.170}%
-\contentsline {subsubsection}{Returns}{21}{subsubsection*.172}%
-\contentsline {subsubsection}{Returns}{21}{subsubsection*.174}%
-\contentsline {subsubsection}{Returns}{21}{subsubsection*.176}%
-\contentsline {subsubsection}{Returns}{21}{subsubsection*.178}%
-\contentsline {subsubsection}{Parameters}{22}{subsubsection*.180}%
-\contentsline {subsubsection}{Parameters}{22}{subsubsection*.182}%
-\contentsline {subsubsection}{Parameters}{22}{subsubsection*.184}%
+\contentsline {subsubsection}{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier}{8}{subsubsection*.30}%
+\contentsline {subsection}{\numberline {1.4.2}MIMLtoMIBRClassifier}{9}{subsection.1.4.2}%
+\contentsline {subsubsection}{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier}{9}{subsubsection*.38}%
+\contentsline {subsection}{\numberline {1.4.3}MIMLtoMILPClassifier}{10}{subsection.1.4.3}%
+\contentsline {subsubsection}{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier}{10}{subsubsection*.46}%
+\contentsline {section}{\numberline {1.5}MIML Lazy Classifiers}{11}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}MIML\sphinxhyphen {}kNN}{11}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}MIML\sphinxhyphen {}BR\sphinxhyphen {}kNN}{12}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}MIML\sphinxhyphen {}DGC}{13}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}MIML\sphinxhyphen {}MAP\sphinxhyphen {}kNN}{14}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Multi\sphinxhyphen {}Instance Multi\sphinxhyphen {}Label kNN}{15}{subsection.1.5.5}%
+\contentsline {chapter}{\numberline {2}Data}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Instance}{17}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}miml.data.instance.Instance}{17}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Bag}{19}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}miml.data.bag.Bag}{19}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}MIMLDataset}{22}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}miml.data.miml\_dataset.MIMLDataset}{22}{subsection.2.3.1}%
-\contentsline {subsubsection}{Parameters}{23}{subsubsection*.187}%
-\contentsline {subsubsection}{Parameters}{23}{subsubsection*.189}%
-\contentsline {subsubsection}{Parameters}{23}{subsubsection*.191}%
-\contentsline {subsubsection}{Returns}{23}{subsubsection*.193}%
-\contentsline {subsubsection}{Parameters}{24}{subsubsection*.195}%
-\contentsline {subsubsection}{Parameters}{24}{subsubsection*.197}%
-\contentsline {subsubsection}{Parameters}{24}{subsubsection*.199}%
-\contentsline {subsubsection}{Returns}{24}{subsubsection*.201}%
-\contentsline {subsubsection}{Returns}{24}{subsubsection*.204}%
-\contentsline {subsubsection}{Parameters}{25}{subsubsection*.206}%
-\contentsline {subsubsection}{Returns}{25}{subsubsection*.207}%
-\contentsline {subsubsection}{Returns}{25}{subsubsection*.209}%
-\contentsline {subsubsection}{Returns}{25}{subsubsection*.211}%
-\contentsline {subsubsection}{Parameters}{25}{subsubsection*.213}%
-\contentsline {subsubsection}{Returns}{25}{subsubsection*.214}%
-\contentsline {subsubsection}{Returns}{26}{subsubsection*.216}%
-\contentsline {subsubsection}{Returns}{26}{subsubsection*.218}%
-\contentsline {subsubsection}{Returns}{26}{subsubsection*.220}%
-\contentsline {subsubsection}{Parameters}{26}{subsubsection*.222}%
-\contentsline {subsubsection}{Returns}{26}{subsubsection*.223}%
-\contentsline {subsubsection}{Returns}{26}{subsubsection*.225}%
-\contentsline {subsubsection}{Returns}{27}{subsubsection*.227}%
-\contentsline {subsubsection}{Returns}{27}{subsubsection*.229}%
-\contentsline {subsubsection}{Returns}{27}{subsubsection*.231}%
-\contentsline {subsubsection}{Returns}{27}{subsubsection*.233}%
-\contentsline {subsubsection}{Returns}{27}{subsubsection*.235}%
-\contentsline {subsubsection}{Returns}{27}{subsubsection*.237}%
-\contentsline {subsubsection}{Returns}{28}{subsubsection*.239}%
-\contentsline {subsubsection}{Returns}{28}{subsubsection*.241}%
-\contentsline {subsubsection}{Returns}{28}{subsubsection*.243}%
-\contentsline {subsubsection}{Parameters}{28}{subsubsection*.245}%
-\contentsline {subsubsection}{Parameters}{28}{subsubsection*.247}%
-\contentsline {subsubsection}{Parameters}{29}{subsubsection*.249}%
-\contentsline {subsubsection}{Parameters}{29}{subsubsection*.251}%
-\contentsline {subsubsection}{Parameters}{29}{subsubsection*.253}%
-\contentsline {subsubsection}{Parameters}{29}{subsubsection*.255}%
-\contentsline {subsubsection}{Parameters}{29}{subsubsection*.257}%
-\contentsline {subsubsection}{Parameters}{30}{subsubsection*.259}%
-\contentsline {subsubsection}{Returns}{30}{subsubsection*.260}%
-\contentsline {subsubsection}{Parameters}{30}{subsubsection*.262}%
-\contentsline {subsubsection}{Returns}{30}{subsubsection*.263}%
-\contentsline {section}{\numberline {2.4}Dataset utils}{30}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Report}{31}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Report}{31}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}miml.report.report.Report}{31}{subsection.3.1.1}%
-\contentsline {subsubsection}{Parameters}{31}{subsubsection*.266}%
-\contentsline {subsubsection}{Parameters}{31}{subsubsection*.268}%
-\contentsline {subsubsection}{Parameters}{32}{subsubsection*.270}%
-\contentsline {chapter}{\numberline {4}Transformation}{33}{chapter.4}%
-\contentsline {section}{\numberline {4.1}mimlTOmi}{33}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}BinaryRelevanceTransformation}{33}{subsection.4.1.1}%
-\contentsline {subsubsection}{miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation}{33}{subsubsection*.271}%
-\contentsline {paragraph}{Parameters}{33}{paragraph*.274}%
-\contentsline {paragraph}{Returns}{33}{paragraph*.275}%
-\contentsline {paragraph}{Returns}{34}{paragraph*.277}%
-\contentsline {subsection}{\numberline {4.1.2}LabelPowersetTransformation}{34}{subsection.4.1.2}%
-\contentsline {subsubsection}{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation}{34}{subsubsection*.278}%
-\contentsline {paragraph}{Parameters}{34}{paragraph*.281}%
-\contentsline {paragraph}{Returns}{34}{paragraph*.282}%
-\contentsline {paragraph}{Parameters}{34}{paragraph*.284}%
-\contentsline {paragraph}{Returns}{35}{paragraph*.285}%
-\contentsline {paragraph}{Parameters}{35}{paragraph*.287}%
-\contentsline {paragraph}{Returns}{35}{paragraph*.288}%
-\contentsline {paragraph}{Returns}{35}{paragraph*.290}%
-\contentsline {section}{\numberline {4.2}mimlTOml}{35}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}ArithmeticTransformation}{35}{subsection.4.2.1}%
-\contentsline {subsubsection}{miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation}{35}{subsubsection*.291}%
-\contentsline {paragraph}{Parameters}{36}{paragraph*.294}%
-\contentsline {paragraph}{Returns}{36}{paragraph*.295}%
-\contentsline {paragraph}{Parameters}{36}{paragraph*.297}%
-\contentsline {paragraph}{Returns}{36}{paragraph*.298}%
-\contentsline {subsection}{\numberline {4.2.2}GeometricTransformation}{36}{subsection.4.2.2}%
-\contentsline {subsubsection}{miml.transformation.mimlTOml.geometric.GeometricTransformation}{36}{subsubsection*.299}%
-\contentsline {paragraph}{Parameters}{37}{paragraph*.302}%
-\contentsline {paragraph}{Returns}{37}{paragraph*.303}%
-\contentsline {paragraph}{Parameters}{37}{paragraph*.305}%
-\contentsline {paragraph}{Returns}{37}{paragraph*.306}%
-\contentsline {subsection}{\numberline {4.2.3}MinMaxTransformation}{37}{subsection.4.2.3}%
-\contentsline {subsubsection}{miml.transformation.mimlTOml.minmax.MinMaxTransformation}{37}{subsubsection*.307}%
-\contentsline {paragraph}{Parameters}{38}{paragraph*.310}%
-\contentsline {paragraph}{Returns}{38}{paragraph*.311}%
-\contentsline {paragraph}{Parameters}{38}{paragraph*.313}%
-\contentsline {paragraph}{Returns}{38}{paragraph*.314}%
-\contentsline {subsection}{\numberline {4.2.4}MIMLtoMLTransformation}{38}{subsection.4.2.4}%
-\contentsline {subsubsection}{miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation}{38}{subsubsection*.315}%
-\contentsline {chapter}{Index}{39}{section*.319}%
+\contentsline {section}{\numberline {2.4}Dataset utils}{28}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Report}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Report}{29}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}miml.report.report.Report}{29}{subsection.3.1.1}%
+\contentsline {chapter}{\numberline {4}Transformation}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}mimlTOmi}{31}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}BinaryRelevanceTransformation}{31}{subsection.4.1.1}%
+\contentsline {subsubsection}{miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation}{31}{subsubsection*.159}%
+\contentsline {subsection}{\numberline {4.1.2}LabelPowersetTransformation}{32}{subsection.4.1.2}%
+\contentsline {subsubsection}{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation}{32}{subsubsection*.163}%
+\contentsline {section}{\numberline {4.2}mimlTOml}{33}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}ArithmeticTransformation}{33}{subsection.4.2.1}%
+\contentsline {subsubsection}{miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation}{33}{subsubsection*.169}%
+\contentsline {subsection}{\numberline {4.2.2}GeometricTransformation}{33}{subsection.4.2.2}%
+\contentsline {subsubsection}{miml.transformation.mimlTOml.geometric.GeometricTransformation}{33}{subsubsection*.173}%
+\contentsline {subsection}{\numberline {4.2.3}MinMaxTransformation}{34}{subsection.4.2.3}%
+\contentsline {subsubsection}{miml.transformation.mimlTOml.minmax.MinMaxTransformation}{34}{subsubsection*.177}%
+\contentsline {subsection}{\numberline {4.2.4}MIMLtoMLTransformation}{35}{subsection.4.2.4}%
+\contentsline {subsubsection}{miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation}{35}{subsubsection*.181}%
+\contentsline {chapter}{\numberline {5}Distances}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Hausdorff Distance}{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Maximal Hausdorff}{37}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Minimal Hausdorff}{38}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Average Hausdorff}{38}{section.5.4}%
+\contentsline {chapter}{Index}{41}{section*.193}%

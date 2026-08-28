@@ -5,282 +5,354 @@
 \let\spxextra \sphinxstyleindexextra
 
   \bigletter A
-  \item \spxentry{add\_attribute()}\spxextra{miml.data.bag.Bag method}, \hyperpage{18}
-  \item \spxentry{add\_attribute()}\spxextra{miml.data.instance.Instance method}, \hyperpage{15}
+  \item \spxentry{add\_attribute()}\spxextra{miml.data.bag.Bag method}, \hyperpage{19}
+  \item \spxentry{add\_attribute()}\spxextra{miml.data.instance.Instance method}, \hyperpage{17}
   \item \spxentry{add\_attribute()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
 		\hyperpage{22}
-  \item \spxentry{add\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{23}
-  \item \spxentry{add\_instance()}\spxextra{miml.data.bag.Bag method}, \hyperpage{18}
+  \item \spxentry{add\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{22}
+  \item \spxentry{add\_instance()}\spxextra{miml.data.bag.Bag method}, \hyperpage{19}
   \item \spxentry{add\_instance()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
 		\hyperpage{23}
+  \item \spxentry{apr}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier attribute}, 
+		\hyperpage{3}
   \item \spxentry{APRClassifier}\spxextra{class in miml.classifier.mi.apr\_classifier}, 
-		\hyperpage{1}
+		\hyperpage{3}
   \item \spxentry{ArithmeticTransformation}\spxextra{class in miml.transformation.mimlTOml.arithmetic}, 
-		\hyperpage{35}
+		\hyperpage{33}
+  \item \spxentry{AverageHausdorff}\spxextra{class in miml.core.average\_hausdorff}, \hyperpage{38}
 
   \indexspace
   \bigletter B
-  \item \spxentry{Bag}\spxextra{class in miml.data.bag}, \hyperpage{18}
+  \item \spxentry{Bag}\spxextra{class in miml.data.bag}, \hyperpage{19}
+  \item \spxentry{base\_classifier}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier attribute}, 
+		\hyperpage{4}
   \item \spxentry{BinaryRelevanceTransformation}\spxextra{class in miml.transformation.mimlTOmi.binary\_relevance\_transformation}, 
-		\hyperpage{33}
+		\hyperpage{31}
+  \item \spxentry{build()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}, 
+		\hyperpage{15}
+  \item \spxentry{build\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method}, 
+		\hyperpage{12}
+  \item \spxentry{build\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_dgc.MIMLDGC method}, 
+		\hyperpage{13}
+  \item \spxentry{build\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_knn.MIMLkNN method}, 
+		\hyperpage{11}
+  \item \spxentry{build\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_map\_knn.MIMLMAPkNN method}, 
+		\hyperpage{14}
+  \item \spxentry{build\_internal()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}, 
+		\hyperpage{15}
 
   \indexspace
   \bigletter C
-  \item \spxentry{calculate\_metrics()}\spxextra{miml.report.report.Report method}, \hyperpage{31}
+  \item \spxentry{calculate\_metrics()}\spxextra{miml.report.report.Report method}, \hyperpage{29}
   \item \spxentry{cardinality()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
 		\hyperpage{23}
 
   \indexspace
   \bigletter D
   \item \spxentry{delete\_attribute()}\spxextra{miml.data.bag.Bag method}, \hyperpage{19}
-  \item \spxentry{delete\_attribute()}\spxextra{miml.data.instance.Instance method}, \hyperpage{15}
+  \item \spxentry{delete\_attribute()}\spxextra{miml.data.instance.Instance method}, \hyperpage{17}
   \item \spxentry{delete\_attribute()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
 		\hyperpage{23}
   \item \spxentry{delete\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{24}
-  \item \spxentry{delete\_instance()}\spxextra{miml.data.bag.Bag method}, \hyperpage{19}
+		\hyperpage{23}
+  \item \spxentry{delete\_instance()}\spxextra{miml.data.bag.Bag method}, \hyperpage{20}
   \item \spxentry{delete\_instance()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{24}
-  \item \spxentry{density()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{24}
-  \item \spxentry{describe()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{24}
-  \item \spxentry{distinct()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{24}
+		\hyperpage{23}
+  \item \spxentry{density()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{23}
+  \item \spxentry{describe()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{23}
+  \item \spxentry{distance()}\spxextra{miml.core.average\_hausdorff.AverageHausdorff method}, 
+		\hyperpage{38}
+  \item \spxentry{distance()}\spxextra{miml.core.hausdorff\_distance.HausdorffDistance method}, 
+		\hyperpage{37}
+  \item \spxentry{distance()}\spxextra{miml.core.maximal\_hausdorff.MaximalHausdorff method}, 
+		\hyperpage{37}
+  \item \spxentry{distance()}\spxextra{miml.core.minimal\_hausdorff.MinimalHausdorff method}, 
+		\hyperpage{38}
+  \item \spxentry{distinct()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{23}
 
   \indexspace
   \bigletter E
+  \item \spxentry{evaluate()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}, 
+		\hyperpage{15}
   \item \spxentry{evaluate()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}, 
-		\hyperpage{4}
+		\hyperpage{5}
   \item \spxentry{evaluate()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}, 
-		\hyperpage{10}
+		\hyperpage{9}
   \item \spxentry{evaluate()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}, 
 		\hyperpage{8}
   \item \spxentry{evaluate()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}, 
-		\hyperpage{12}
+		\hyperpage{10}
   \item \spxentry{evaluate()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}, 
 		\hyperpage{6}
 
   \indexspace
   \bigletter F
   \item \spxentry{fit()}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier method}, 
-		\hyperpage{1}
-  \item \spxentry{fit()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}, 
 		\hyperpage{3}
+  \item \spxentry{fit()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}, 
+		\hyperpage{4}
   \item \spxentry{fit()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}, 
 		\hyperpage{5}
   \item \spxentry{fit()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}, 
-		\hyperpage{10}
+		\hyperpage{9}
   \item \spxentry{fit()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}, 
 		\hyperpage{8}
   \item \spxentry{fit()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}, 
-		\hyperpage{12}
+		\hyperpage{10}
   \item \spxentry{fit()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}, 
-		\hyperpage{6}
+		\hyperpage{7}
   \item \spxentry{fit\_internal()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}, 
 		\hyperpage{5}
   \item \spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}, 
-		\hyperpage{11}
-  \item \spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}, 
 		\hyperpage{9}
+  \item \spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}, 
+		\hyperpage{8}
   \item \spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}, 
-		\hyperpage{12}
+		\hyperpage{10}
   \item \spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}, 
 		\hyperpage{7}
 
   \indexspace
   \bigletter G
   \item \spxentry{GeometricTransformation}\spxextra{class in miml.transformation.mimlTOml.geometric}, 
-		\hyperpage{36}
-  \item \spxentry{get\_attribute()}\spxextra{miml.data.bag.Bag method}, \hyperpage{19}
-  \item \spxentry{get\_attribute()}\spxextra{miml.data.instance.Instance method}, \hyperpage{15}
+		\hyperpage{33}
+  \item \spxentry{get\_attribute()}\spxextra{miml.data.bag.Bag method}, \hyperpage{20}
+  \item \spxentry{get\_attribute()}\spxextra{miml.data.instance.Instance method}, \hyperpage{17}
   \item \spxentry{get\_attribute()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
 		\hyperpage{24}
-  \item \spxentry{get\_attributes()}\spxextra{miml.data.bag.Bag method}, \hyperpage{19}
-  \item \spxentry{get\_attributes()}\spxextra{miml.data.instance.Instance method}, \hyperpage{16}
+  \item \spxentry{get\_attributes()}\spxextra{miml.data.bag.Bag method}, \hyperpage{20}
+  \item \spxentry{get\_attributes()}\spxextra{miml.data.instance.Instance method}, \hyperpage{17}
   \item \spxentry{get\_attributes()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{25}
-  \item \spxentry{get\_attributes\_name()}\spxextra{miml.data.bag.Bag method}, \hyperpage{19}
+		\hyperpage{24}
+  \item \spxentry{get\_attributes\_name()}\spxextra{miml.data.bag.Bag method}, \hyperpage{20}
   \item \spxentry{get\_attributes\_name()}\spxextra{miml.data.instance.Instance method}, 
-		\hyperpage{16}
+		\hyperpage{18}
   \item \spxentry{get\_attributes\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{25}
-  \item \spxentry{get\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{25}
+		\hyperpage{24}
+  \item \spxentry{get\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{24}
+  \item \spxentry{get\_distances()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}, 
+		\hyperpage{15}
+  \item \spxentry{get\_extension()}\spxextra{miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method}, 
+		\hyperpage{12}
   \item \spxentry{get\_features()}\spxextra{miml.data.bag.Bag method}, \hyperpage{20}
-  \item \spxentry{get\_features()}\spxextra{miml.data.instance.Instance method}, \hyperpage{16}
+  \item \spxentry{get\_features()}\spxextra{miml.data.instance.Instance method}, \hyperpage{18}
   \item \spxentry{get\_features()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{25}
+		\hyperpage{24}
   \item \spxentry{get\_features\_by\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{26}
+		\hyperpage{24}
   \item \spxentry{get\_features\_name()}\spxextra{miml.data.bag.Bag method}, \hyperpage{20}
   \item \spxentry{get\_features\_name()}\spxextra{miml.data.instance.Instance method}, 
-		\hyperpage{16}
+		\hyperpage{18}
   \item \spxentry{get\_features\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{26}
+		\hyperpage{25}
   \item \spxentry{get\_instance()}\spxextra{miml.data.bag.Bag method}, \hyperpage{20}
   \item \spxentry{get\_instance()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{26}
-  \item \spxentry{get\_labels()}\spxextra{miml.data.bag.Bag method}, \hyperpage{20}
-  \item \spxentry{get\_labels()}\spxextra{miml.data.instance.Instance method}, \hyperpage{16}
+		\hyperpage{25}
+  \item \spxentry{get\_labels()}\spxextra{miml.data.bag.Bag method}, \hyperpage{21}
+  \item \spxentry{get\_labels()}\spxextra{miml.data.instance.Instance method}, \hyperpage{18}
   \item \spxentry{get\_labels()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{26}
+		\hyperpage{25}
   \item \spxentry{get\_labels\_by\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{26}
-  \item \spxentry{get\_labels\_name()}\spxextra{miml.data.bag.Bag method}, \hyperpage{20}
-  \item \spxentry{get\_labels\_name()}\spxextra{miml.data.instance.Instance method}, \hyperpage{17}
+		\hyperpage{25}
+  \item \spxentry{get\_labels\_name()}\spxextra{miml.data.bag.Bag method}, \hyperpage{21}
+  \item \spxentry{get\_labels\_name()}\spxextra{miml.data.instance.Instance method}, \hyperpage{18}
   \item \spxentry{get\_labels\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{27}
-  \item \spxentry{get\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{27}
+		\hyperpage{25}
+  \item \spxentry{get\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{25}
   \item \spxentry{get\_number\_attributes()}\spxextra{miml.data.bag.Bag method}, \hyperpage{21}
   \item \spxentry{get\_number\_attributes()}\spxextra{miml.data.instance.Instance method}, 
-		\hyperpage{17}
+		\hyperpage{18}
   \item \spxentry{get\_number\_attributes()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{27}
+		\hyperpage{25}
   \item \spxentry{get\_number\_bags()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{27}
+		\hyperpage{26}
   \item \spxentry{get\_number\_features()}\spxextra{miml.data.bag.Bag method}, \hyperpage{21}
   \item \spxentry{get\_number\_features()}\spxextra{miml.data.instance.Instance method}, 
-		\hyperpage{17}
+		\hyperpage{18}
   \item \spxentry{get\_number\_features()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{27}
+		\hyperpage{26}
   \item \spxentry{get\_number\_instances()}\spxextra{miml.data.bag.Bag method}, \hyperpage{21}
   \item \spxentry{get\_number\_instances()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{27}
+		\hyperpage{26}
   \item \spxentry{get\_number\_labels()}\spxextra{miml.data.bag.Bag method}, \hyperpage{21}
   \item \spxentry{get\_number\_labels()}\spxextra{miml.data.instance.Instance method}, 
-		\hyperpage{17}
+		\hyperpage{19}
   \item \spxentry{get\_number\_labels()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{28}
+		\hyperpage{26}
   \item \spxentry{get\_statistics()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{28}
+		\hyperpage{26}
+
+  \indexspace
+  \bigletter H
+  \item \spxentry{HausdorffDistance}\spxextra{class in miml.core.hausdorff\_distance}, 
+		\hyperpage{37}
 
   \indexspace
   \bigletter I
-  \item \spxentry{Instance}\spxextra{class in miml.data.instance}, \hyperpage{15}
+  \item \spxentry{Instance}\spxextra{class in miml.data.instance}, \hyperpage{17}
 
   \indexspace
   \bigletter L
   \item \spxentry{LabelPowersetTransformation}\spxextra{class in miml.transformation.mimlTOmi.label\_powerset\_transformation}, 
-		\hyperpage{34}
+		\hyperpage{32}
   \item \spxentry{lp\_to\_ml\_label()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}, 
-		\hyperpage{34}
+		\hyperpage{32}
 
   \indexspace
   \bigletter M
+  \item \spxentry{make\_prediction\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method}, 
+		\hyperpage{12}
+  \item \spxentry{make\_prediction\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_dgc.MIMLDGC method}, 
+		\hyperpage{13}
+  \item \spxentry{make\_prediction\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_knn.MIMLkNN method}, 
+		\hyperpage{12}
+  \item \spxentry{make\_prediction\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_map\_knn.MIMLMAPkNN method}, 
+		\hyperpage{14}
+  \item \spxentry{make\_prediction\_internal()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}, 
+		\hyperpage{15}
+  \item \spxentry{MaximalHausdorff}\spxextra{class in miml.core.maximal\_hausdorff}, \hyperpage{37}
+  \item \spxentry{MIMLBRkNN}\spxextra{class in miml.classifier.miml.lazy.miml\_br\_knn}, 
+		\hyperpage{12}
   \item \spxentry{MIMLClassifier}\spxextra{class in miml.classifier.miml\_classifier}, 
-		\hyperpage{4}
+		\hyperpage{5}
   \item \spxentry{MIMLDataset}\spxextra{class in miml.data.miml\_dataset}, \hyperpage{22}
+  \item \spxentry{MIMLDGC}\spxextra{class in miml.classifier.miml.lazy.miml\_dgc}, \hyperpage{13}
+  \item \spxentry{MIMLkNN}\spxextra{class in miml.classifier.miml.lazy.miml\_knn}, \hyperpage{11}
+  \item \spxentry{MIMLMAPkNN}\spxextra{class in miml.classifier.miml.lazy.miml\_map\_knn}, 
+		\hyperpage{14}
   \item \spxentry{MIMLtoMIBRClassifier}\spxextra{class in miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier}, 
-		\hyperpage{10}
+		\hyperpage{9}
   \item \spxentry{MIMLtoMIClassifier}\spxextra{class in miml.classifier.mimlTOmi.miml\_to\_mi\_classifier}, 
 		\hyperpage{8}
   \item \spxentry{MIMLtoMILPClassifier}\spxextra{class in miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier}, 
-		\hyperpage{12}
+		\hyperpage{10}
   \item \spxentry{MIMLtoMLClassifier}\spxextra{class in miml.classifier.mimlTOml.miml\_to\_ml\_classifier}, 
 		\hyperpage{6}
   \item \spxentry{MIMLtoMLTransformation}\spxextra{class in miml.transformation.mimlTOml.miml\_to\_ml\_transformation}, 
-		\hyperpage{38}
+		\hyperpage{35}
+  \item \spxentry{MinimalHausdorff}\spxextra{class in miml.core.minimal\_hausdorff}, \hyperpage{38}
   \item \spxentry{MinMaxTransformation}\spxextra{class in miml.transformation.mimlTOml.minmax}, 
-		\hyperpage{37}
-  \item \spxentry{MIWrapperClassifier}\spxextra{class in miml.classifier.mi.mi\_wrapper\_classifier}, 
-		\hyperpage{3}
-  \item \spxentry{ml\_to\_lp\_label()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}, 
 		\hyperpage{34}
+  \item \spxentry{MIWrapperClassifier}\spxextra{class in miml.classifier.mi.mi\_wrapper\_classifier}, 
+		\hyperpage{4}
+  \item \spxentry{ml\_to\_lp\_label()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}, 
+		\hyperpage{32}
+  \item \spxentry{MultiInstanceMultiLabelKNN}\spxextra{class in miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn}, 
+		\hyperpage{15}
 
   \indexspace
   \bigletter P
   \item \spxentry{predict()}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier method}, 
-		\hyperpage{2}
-  \item \spxentry{predict()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}, 
 		\hyperpage{3}
+  \item \spxentry{predict()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}, 
+		\hyperpage{4}
+  \item \spxentry{predict()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}, 
+		\hyperpage{16}
   \item \spxentry{predict()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}, 
-		\hyperpage{5}
+		\hyperpage{6}
   \item \spxentry{predict()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}, 
-		\hyperpage{11}
-  \item \spxentry{predict()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}, 
 		\hyperpage{9}
+  \item \spxentry{predict()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}, 
+		\hyperpage{8}
   \item \spxentry{predict()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}, 
-		\hyperpage{13}
+		\hyperpage{11}
   \item \spxentry{predict()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}, 
 		\hyperpage{7}
   \item \spxentry{predict\_bag()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}, 
-		\hyperpage{5}
+		\hyperpage{6}
   \item \spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}, 
-		\hyperpage{11}
+		\hyperpage{10}
   \item \spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}, 
-		\hyperpage{9}
+		\hyperpage{8}
   \item \spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}, 
-		\hyperpage{13}
+		\hyperpage{11}
   \item \spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}, 
 		\hyperpage{7}
   \item \spxentry{predict\_proba()}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier method}, 
-		\hyperpage{2}
-  \item \spxentry{predict\_proba()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}, 
 		\hyperpage{4}
-  \item \spxentry{predict\_proba()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}, 
+  \item \spxentry{predict\_proba()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}, 
 		\hyperpage{5}
+  \item \spxentry{predict\_proba()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}, 
+		\hyperpage{16}
+  \item \spxentry{predict\_proba()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}, 
+		\hyperpage{6}
   \item \spxentry{predict\_proba()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}, 
-		\hyperpage{11}
+		\hyperpage{10}
   \item \spxentry{predict\_proba()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}, 
 		\hyperpage{9}
   \item \spxentry{predict\_proba()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}, 
-		\hyperpage{13}
+		\hyperpage{11}
   \item \spxentry{predict\_proba()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}, 
 		\hyperpage{7}
+  \item \spxentry{predict\_proba\_bag()}\spxextra{miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method}, 
+		\hyperpage{13}
+  \item \spxentry{predict\_proba\_bag()}\spxextra{miml.classifier.miml.lazy.miml\_dgc.MIMLDGC method}, 
+		\hyperpage{13}
+  \item \spxentry{predict\_proba\_bag()}\spxextra{miml.classifier.miml.lazy.miml\_knn.MIMLkNN method}, 
+		\hyperpage{12}
+  \item \spxentry{predict\_proba\_bag()}\spxextra{miml.classifier.miml.lazy.miml\_map\_knn.MIMLMAPkNN method}, 
+		\hyperpage{14}
+  \item \spxentry{predict\_proba\_bag()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}, 
+		\hyperpage{16}
 
   \indexspace
   \bigletter R
-  \item \spxentry{Report}\spxextra{class in miml.report.report}, \hyperpage{31}
+  \item \spxentry{Report}\spxextra{class in miml.report.report}, \hyperpage{29}
 
   \indexspace
   \bigletter S
   \item \spxentry{save\_arff()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{28}
-  \item \spxentry{save\_csv()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{28}
-  \item \spxentry{set\_attribute()}\spxextra{miml.data.bag.Bag method}, \hyperpage{21}
-  \item \spxentry{set\_attribute()}\spxextra{miml.data.instance.Instance method}, \hyperpage{17}
+		\hyperpage{26}
+  \item \spxentry{save\_csv()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{26}
+  \item \spxentry{set\_attribute()}\spxextra{miml.data.bag.Bag method}, \hyperpage{22}
+  \item \spxentry{set\_attribute()}\spxextra{miml.data.instance.Instance method}, \hyperpage{19}
   \item \spxentry{set\_attribute()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{28}
-  \item \spxentry{set\_bag()}\spxextra{miml.data.instance.Instance method}, \hyperpage{18}
+		\hyperpage{27}
+  \item \spxentry{set\_bag()}\spxextra{miml.data.instance.Instance method}, \hyperpage{19}
   \item \spxentry{set\_dataset()}\spxextra{miml.data.bag.Bag method}, \hyperpage{22}
+  \item \spxentry{set\_extension()}\spxextra{miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method}, 
+		\hyperpage{13}
   \item \spxentry{set\_features\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{29}
+		\hyperpage{27}
   \item \spxentry{set\_labels\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{29}
-  \item \spxentry{set\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{29}
+		\hyperpage{27}
+  \item \spxentry{set\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, \hyperpage{27}
   \item \spxentry{show\_bag()}\spxextra{miml.data.bag.Bag method}, \hyperpage{22}
   \item \spxentry{show\_dataset()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{29}
-  \item \spxentry{show\_instance()}\spxextra{miml.data.instance.Instance method}, \hyperpage{18}
+		\hyperpage{27}
+  \item \spxentry{show\_instance()}\spxextra{miml.data.instance.Instance method}, \hyperpage{19}
   \item \spxentry{split\_dataset()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{30}
+		\hyperpage{27}
   \item \spxentry{split\_dataset\_cv()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}, 
-		\hyperpage{30}
+		\hyperpage{28}
 
   \indexspace
   \bigletter T
-  \item \spxentry{to\_csv()}\spxextra{miml.report.report.Report method}, \hyperpage{31}
-  \item \spxentry{to\_string()}\spxextra{miml.report.report.Report method}, \hyperpage{31}
+  \item \spxentry{to\_csv()}\spxextra{miml.report.report.Report method}, \hyperpage{29}
+  \item \spxentry{to\_string()}\spxextra{miml.report.report.Report method}, \hyperpage{29}
   \item \spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method}, 
-		\hyperpage{33}
+		\hyperpage{31}
   \item \spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}, 
-		\hyperpage{35}
+		\hyperpage{32}
   \item \spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation method}, 
-		\hyperpage{35}
-  \item \spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.geometric.GeometricTransformation method}, 
-		\hyperpage{36}
-  \item \spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method}, 
-		\hyperpage{38}
-  \item \spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.minmax.MinMaxTransformation method}, 
-		\hyperpage{37}
-  \item \spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method}, 
 		\hyperpage{33}
-  \item \spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}, 
+  \item \spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.geometric.GeometricTransformation method}, 
+		\hyperpage{33}
+  \item \spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method}, 
 		\hyperpage{35}
+  \item \spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.minmax.MinMaxTransformation method}, 
+		\hyperpage{34}
+  \item \spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method}, 
+		\hyperpage{31}
+  \item \spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}, 
+		\hyperpage{32}
   \item \spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation method}, 
-		\hyperpage{36}
+		\hyperpage{33}
   \item \spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.geometric.GeometricTransformation method}, 
-		\hyperpage{37}
+		\hyperpage{34}
   \item \spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method}, 
-		\hyperpage{38}
+		\hyperpage{35}
   \item \spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.minmax.MinMaxTransformation method}, 
-		\hyperpage{38}
+		\hyperpage{34}
 
 \end{sphinxtheindex}

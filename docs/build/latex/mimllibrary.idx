@@ -1,21 +1,23 @@
-\indexentry{APRClassifier (class in miml.classifier.mi.apr\_classifier)@\spxentry{APRClassifier}\spxextra{class in miml.classifier.mi.apr\_classifier}|hyperpage}{1}
-\indexentry{fit() (miml.classifier.mi.apr\_classifier.APRClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier method}|hyperpage}{1}
-\indexentry{predict() (miml.classifier.mi.apr\_classifier.APRClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier method}|hyperpage}{2}
-\indexentry{predict\_proba() (miml.classifier.mi.apr\_classifier.APRClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier method}|hyperpage}{2}
-\indexentry{MIWrapperClassifier (class in miml.classifier.mi.mi\_wrapper\_classifier)@\spxentry{MIWrapperClassifier}\spxextra{class in miml.classifier.mi.mi\_wrapper\_classifier}|hyperpage}{3}
-\indexentry{fit() (miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}|hyperpage}{3}
-\indexentry{predict() (miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}|hyperpage}{3}
-\indexentry{predict\_proba() (miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}|hyperpage}{4}
-\indexentry{MIMLClassifier (class in miml.classifier.miml\_classifier)@\spxentry{MIMLClassifier}\spxextra{class in miml.classifier.miml\_classifier}|hyperpage}{4}
-\indexentry{evaluate() (miml.classifier.miml\_classifier.MIMLClassifier method)@\spxentry{evaluate()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}|hyperpage}{4}
+\indexentry{APRClassifier (class in miml.classifier.mi.apr\_classifier)@\spxentry{APRClassifier}\spxextra{class in miml.classifier.mi.apr\_classifier}|hyperpage}{3}
+\indexentry{apr (miml.classifier.mi.apr\_classifier.APRClassifier attribute)@\spxentry{apr}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier attribute}|hyperpage}{3}
+\indexentry{fit() (miml.classifier.mi.apr\_classifier.APRClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier method}|hyperpage}{3}
+\indexentry{predict() (miml.classifier.mi.apr\_classifier.APRClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier method}|hyperpage}{3}
+\indexentry{predict\_proba() (miml.classifier.mi.apr\_classifier.APRClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.mi.apr\_classifier.APRClassifier method}|hyperpage}{4}
+\indexentry{MIWrapperClassifier (class in miml.classifier.mi.mi\_wrapper\_classifier)@\spxentry{MIWrapperClassifier}\spxextra{class in miml.classifier.mi.mi\_wrapper\_classifier}|hyperpage}{4}
+\indexentry{base\_classifier (miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier attribute)@\spxentry{base\_classifier}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier attribute}|hyperpage}{4}
+\indexentry{fit() (miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}|hyperpage}{4}
+\indexentry{predict() (miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}|hyperpage}{4}
+\indexentry{predict\_proba() (miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.mi.mi\_wrapper\_classifier.MIWrapperClassifier method}|hyperpage}{5}
+\indexentry{MIMLClassifier (class in miml.classifier.miml\_classifier)@\spxentry{MIMLClassifier}\spxextra{class in miml.classifier.miml\_classifier}|hyperpage}{5}
+\indexentry{evaluate() (miml.classifier.miml\_classifier.MIMLClassifier method)@\spxentry{evaluate()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}|hyperpage}{5}
 \indexentry{fit() (miml.classifier.miml\_classifier.MIMLClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}|hyperpage}{5}
 \indexentry{fit\_internal() (miml.classifier.miml\_classifier.MIMLClassifier method)@\spxentry{fit\_internal()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}|hyperpage}{5}
-\indexentry{predict() (miml.classifier.miml\_classifier.MIMLClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}|hyperpage}{5}
-\indexentry{predict\_bag() (miml.classifier.miml\_classifier.MIMLClassifier method)@\spxentry{predict\_bag()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}|hyperpage}{5}
-\indexentry{predict\_proba() (miml.classifier.miml\_classifier.MIMLClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}|hyperpage}{5}
+\indexentry{predict() (miml.classifier.miml\_classifier.MIMLClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}|hyperpage}{6}
+\indexentry{predict\_bag() (miml.classifier.miml\_classifier.MIMLClassifier method)@\spxentry{predict\_bag()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}|hyperpage}{6}
+\indexentry{predict\_proba() (miml.classifier.miml\_classifier.MIMLClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.miml\_classifier.MIMLClassifier method}|hyperpage}{6}
 \indexentry{MIMLtoMLClassifier (class in miml.classifier.mimlTOml.miml\_to\_ml\_classifier)@\spxentry{MIMLtoMLClassifier}\spxextra{class in miml.classifier.mimlTOml.miml\_to\_ml\_classifier}|hyperpage}{6}
 \indexentry{evaluate() (miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method)@\spxentry{evaluate()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}|hyperpage}{6}
-\indexentry{fit() (miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}|hyperpage}{6}
+\indexentry{fit() (miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}|hyperpage}{7}
 \indexentry{fit\_internal() (miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method)@\spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}|hyperpage}{7}
 \indexentry{predict() (miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}|hyperpage}{7}
 \indexentry{predict\_bag() (miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method)@\spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOml.miml\_to\_ml\_classifier.MIMLtoMLClassifier method}|hyperpage}{7}
@@ -23,119 +25,154 @@
 \indexentry{MIMLtoMIClassifier (class in miml.classifier.mimlTOmi.miml\_to\_mi\_classifier)@\spxentry{MIMLtoMIClassifier}\spxextra{class in miml.classifier.mimlTOmi.miml\_to\_mi\_classifier}|hyperpage}{8}
 \indexentry{evaluate() (miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method)@\spxentry{evaluate()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}|hyperpage}{8}
 \indexentry{fit() (miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}|hyperpage}{8}
-\indexentry{fit\_internal() (miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method)@\spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}|hyperpage}{9}
-\indexentry{predict() (miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}|hyperpage}{9}
-\indexentry{predict\_bag() (miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method)@\spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}|hyperpage}{9}
+\indexentry{fit\_internal() (miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method)@\spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}|hyperpage}{8}
+\indexentry{predict() (miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}|hyperpage}{8}
+\indexentry{predict\_bag() (miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method)@\spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}|hyperpage}{8}
 \indexentry{predict\_proba() (miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_classifier.MIMLtoMIClassifier method}|hyperpage}{9}
-\indexentry{MIMLtoMIBRClassifier (class in miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier)@\spxentry{MIMLtoMIBRClassifier}\spxextra{class in miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier}|hyperpage}{10}
-\indexentry{evaluate() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{evaluate()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{10}
-\indexentry{fit() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{10}
-\indexentry{fit\_internal() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{11}
-\indexentry{predict() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{11}
-\indexentry{predict\_bag() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{11}
-\indexentry{predict\_proba() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{11}
-\indexentry{MIMLtoMILPClassifier (class in miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier)@\spxentry{MIMLtoMILPClassifier}\spxextra{class in miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier}|hyperpage}{12}
-\indexentry{evaluate() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{evaluate()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{12}
-\indexentry{fit() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{12}
-\indexentry{fit\_internal() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{12}
-\indexentry{predict() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{13}
-\indexentry{predict\_bag() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{13}
-\indexentry{predict\_proba() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{13}
-\indexentry{Instance (class in miml.data.instance)@\spxentry{Instance}\spxextra{class in miml.data.instance}|hyperpage}{15}
-\indexentry{add\_attribute() (miml.data.instance.Instance method)@\spxentry{add\_attribute()}\spxextra{miml.data.instance.Instance method}|hyperpage}{15}
-\indexentry{delete\_attribute() (miml.data.instance.Instance method)@\spxentry{delete\_attribute()}\spxextra{miml.data.instance.Instance method}|hyperpage}{15}
-\indexentry{get\_attribute() (miml.data.instance.Instance method)@\spxentry{get\_attribute()}\spxextra{miml.data.instance.Instance method}|hyperpage}{15}
-\indexentry{get\_attributes() (miml.data.instance.Instance method)@\spxentry{get\_attributes()}\spxextra{miml.data.instance.Instance method}|hyperpage}{16}
-\indexentry{get\_attributes\_name() (miml.data.instance.Instance method)@\spxentry{get\_attributes\_name()}\spxextra{miml.data.instance.Instance method}|hyperpage}{16}
-\indexentry{get\_features() (miml.data.instance.Instance method)@\spxentry{get\_features()}\spxextra{miml.data.instance.Instance method}|hyperpage}{16}
-\indexentry{get\_features\_name() (miml.data.instance.Instance method)@\spxentry{get\_features\_name()}\spxextra{miml.data.instance.Instance method}|hyperpage}{16}
-\indexentry{get\_labels() (miml.data.instance.Instance method)@\spxentry{get\_labels()}\spxextra{miml.data.instance.Instance method}|hyperpage}{16}
-\indexentry{get\_labels\_name() (miml.data.instance.Instance method)@\spxentry{get\_labels\_name()}\spxextra{miml.data.instance.Instance method}|hyperpage}{17}
-\indexentry{get\_number\_attributes() (miml.data.instance.Instance method)@\spxentry{get\_number\_attributes()}\spxextra{miml.data.instance.Instance method}|hyperpage}{17}
-\indexentry{get\_number\_features() (miml.data.instance.Instance method)@\spxentry{get\_number\_features()}\spxextra{miml.data.instance.Instance method}|hyperpage}{17}
-\indexentry{get\_number\_labels() (miml.data.instance.Instance method)@\spxentry{get\_number\_labels()}\spxextra{miml.data.instance.Instance method}|hyperpage}{17}
-\indexentry{set\_attribute() (miml.data.instance.Instance method)@\spxentry{set\_attribute()}\spxextra{miml.data.instance.Instance method}|hyperpage}{17}
-\indexentry{set\_bag() (miml.data.instance.Instance method)@\spxentry{set\_bag()}\spxextra{miml.data.instance.Instance method}|hyperpage}{18}
-\indexentry{show\_instance() (miml.data.instance.Instance method)@\spxentry{show\_instance()}\spxextra{miml.data.instance.Instance method}|hyperpage}{18}
-\indexentry{Bag (class in miml.data.bag)@\spxentry{Bag}\spxextra{class in miml.data.bag}|hyperpage}{18}
-\indexentry{add\_attribute() (miml.data.bag.Bag method)@\spxentry{add\_attribute()}\spxextra{miml.data.bag.Bag method}|hyperpage}{18}
-\indexentry{add\_instance() (miml.data.bag.Bag method)@\spxentry{add\_instance()}\spxextra{miml.data.bag.Bag method}|hyperpage}{18}
+\indexentry{MIMLtoMIBRClassifier (class in miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier)@\spxentry{MIMLtoMIBRClassifier}\spxextra{class in miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier}|hyperpage}{9}
+\indexentry{evaluate() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{evaluate()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{9}
+\indexentry{fit() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{9}
+\indexentry{fit\_internal() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{9}
+\indexentry{predict() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{9}
+\indexentry{predict\_bag() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{10}
+\indexentry{predict\_proba() (miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_br\_classifier.MIMLtoMIBRClassifier method}|hyperpage}{10}
+\indexentry{MIMLtoMILPClassifier (class in miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier)@\spxentry{MIMLtoMILPClassifier}\spxextra{class in miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier}|hyperpage}{10}
+\indexentry{evaluate() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{evaluate()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{10}
+\indexentry{fit() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{fit()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{10}
+\indexentry{fit\_internal() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{fit\_internal()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{10}
+\indexentry{predict() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{predict()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{11}
+\indexentry{predict\_bag() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{predict\_bag()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{11}
+\indexentry{predict\_proba() (miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.mimlTOmi.miml\_to\_mi\_lp\_classifier.MIMLtoMILPClassifier method}|hyperpage}{11}
+\indexentry{MIMLkNN (class in miml.classifier.miml.lazy.miml\_knn)@\spxentry{MIMLkNN}\spxextra{class in miml.classifier.miml.lazy.miml\_knn}|hyperpage}{11}
+\indexentry{build\_internal() (miml.classifier.miml.lazy.miml\_knn.MIMLkNN method)@\spxentry{build\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_knn.MIMLkNN method}|hyperpage}{11}
+\indexentry{make\_prediction\_internal() (miml.classifier.miml.lazy.miml\_knn.MIMLkNN method)@\spxentry{make\_prediction\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_knn.MIMLkNN method}|hyperpage}{12}
+\indexentry{predict\_proba\_bag() (miml.classifier.miml.lazy.miml\_knn.MIMLkNN method)@\spxentry{predict\_proba\_bag()}\spxextra{miml.classifier.miml.lazy.miml\_knn.MIMLkNN method}|hyperpage}{12}
+\indexentry{MIMLBRkNN (class in miml.classifier.miml.lazy.miml\_br\_knn)@\spxentry{MIMLBRkNN}\spxextra{class in miml.classifier.miml.lazy.miml\_br\_knn}|hyperpage}{12}
+\indexentry{build\_internal() (miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method)@\spxentry{build\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method}|hyperpage}{12}
+\indexentry{get\_extension() (miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method)@\spxentry{get\_extension()}\spxextra{miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method}|hyperpage}{12}
+\indexentry{make\_prediction\_internal() (miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method)@\spxentry{make\_prediction\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method}|hyperpage}{12}
+\indexentry{predict\_proba\_bag() (miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method)@\spxentry{predict\_proba\_bag()}\spxextra{miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method}|hyperpage}{13}
+\indexentry{set\_extension() (miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method)@\spxentry{set\_extension()}\spxextra{miml.classifier.miml.lazy.miml\_br\_knn.MIMLBRkNN method}|hyperpage}{13}
+\indexentry{MIMLDGC (class in miml.classifier.miml.lazy.miml\_dgc)@\spxentry{MIMLDGC}\spxextra{class in miml.classifier.miml.lazy.miml\_dgc}|hyperpage}{13}
+\indexentry{build\_internal() (miml.classifier.miml.lazy.miml\_dgc.MIMLDGC method)@\spxentry{build\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_dgc.MIMLDGC method}|hyperpage}{13}
+\indexentry{make\_prediction\_internal() (miml.classifier.miml.lazy.miml\_dgc.MIMLDGC method)@\spxentry{make\_prediction\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_dgc.MIMLDGC method}|hyperpage}{13}
+\indexentry{predict\_proba\_bag() (miml.classifier.miml.lazy.miml\_dgc.MIMLDGC method)@\spxentry{predict\_proba\_bag()}\spxextra{miml.classifier.miml.lazy.miml\_dgc.MIMLDGC method}|hyperpage}{13}
+\indexentry{MIMLMAPkNN (class in miml.classifier.miml.lazy.miml\_map\_knn)@\spxentry{MIMLMAPkNN}\spxextra{class in miml.classifier.miml.lazy.miml\_map\_knn}|hyperpage}{14}
+\indexentry{build\_internal() (miml.classifier.miml.lazy.miml\_map\_knn.MIMLMAPkNN method)@\spxentry{build\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_map\_knn.MIMLMAPkNN method}|hyperpage}{14}
+\indexentry{make\_prediction\_internal() (miml.classifier.miml.lazy.miml\_map\_knn.MIMLMAPkNN method)@\spxentry{make\_prediction\_internal()}\spxextra{miml.classifier.miml.lazy.miml\_map\_knn.MIMLMAPkNN method}|hyperpage}{14}
+\indexentry{predict\_proba\_bag() (miml.classifier.miml.lazy.miml\_map\_knn.MIMLMAPkNN method)@\spxentry{predict\_proba\_bag()}\spxextra{miml.classifier.miml.lazy.miml\_map\_knn.MIMLMAPkNN method}|hyperpage}{14}
+\indexentry{MultiInstanceMultiLabelKNN (class in miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn)@\spxentry{MultiInstanceMultiLabelKNN}\spxextra{class in miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn}|hyperpage}{15}
+\indexentry{build() (miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method)@\spxentry{build()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}|hyperpage}{15}
+\indexentry{build\_internal() (miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method)@\spxentry{build\_internal()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}|hyperpage}{15}
+\indexentry{evaluate() (miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method)@\spxentry{evaluate()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}|hyperpage}{15}
+\indexentry{get\_distances() (miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method)@\spxentry{get\_distances()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}|hyperpage}{15}
+\indexentry{make\_prediction\_internal() (miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method)@\spxentry{make\_prediction\_internal()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}|hyperpage}{15}
+\indexentry{predict() (miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method)@\spxentry{predict()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}|hyperpage}{16}
+\indexentry{predict\_proba() (miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method)@\spxentry{predict\_proba()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}|hyperpage}{16}
+\indexentry{predict\_proba\_bag() (miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method)@\spxentry{predict\_proba\_bag()}\spxextra{miml.classifier.miml.lazy.multi\_instance\_multi\_label\_knn.MultiInstanceMultiLabelKNN method}|hyperpage}{16}
+\indexentry{Instance (class in miml.data.instance)@\spxentry{Instance}\spxextra{class in miml.data.instance}|hyperpage}{17}
+\indexentry{add\_attribute() (miml.data.instance.Instance method)@\spxentry{add\_attribute()}\spxextra{miml.data.instance.Instance method}|hyperpage}{17}
+\indexentry{delete\_attribute() (miml.data.instance.Instance method)@\spxentry{delete\_attribute()}\spxextra{miml.data.instance.Instance method}|hyperpage}{17}
+\indexentry{get\_attribute() (miml.data.instance.Instance method)@\spxentry{get\_attribute()}\spxextra{miml.data.instance.Instance method}|hyperpage}{17}
+\indexentry{get\_attributes() (miml.data.instance.Instance method)@\spxentry{get\_attributes()}\spxextra{miml.data.instance.Instance method}|hyperpage}{17}
+\indexentry{get\_attributes\_name() (miml.data.instance.Instance method)@\spxentry{get\_attributes\_name()}\spxextra{miml.data.instance.Instance method}|hyperpage}{18}
+\indexentry{get\_features() (miml.data.instance.Instance method)@\spxentry{get\_features()}\spxextra{miml.data.instance.Instance method}|hyperpage}{18}
+\indexentry{get\_features\_name() (miml.data.instance.Instance method)@\spxentry{get\_features\_name()}\spxextra{miml.data.instance.Instance method}|hyperpage}{18}
+\indexentry{get\_labels() (miml.data.instance.Instance method)@\spxentry{get\_labels()}\spxextra{miml.data.instance.Instance method}|hyperpage}{18}
+\indexentry{get\_labels\_name() (miml.data.instance.Instance method)@\spxentry{get\_labels\_name()}\spxextra{miml.data.instance.Instance method}|hyperpage}{18}
+\indexentry{get\_number\_attributes() (miml.data.instance.Instance method)@\spxentry{get\_number\_attributes()}\spxextra{miml.data.instance.Instance method}|hyperpage}{18}
+\indexentry{get\_number\_features() (miml.data.instance.Instance method)@\spxentry{get\_number\_features()}\spxextra{miml.data.instance.Instance method}|hyperpage}{18}
+\indexentry{get\_number\_labels() (miml.data.instance.Instance method)@\spxentry{get\_number\_labels()}\spxextra{miml.data.instance.Instance method}|hyperpage}{19}
+\indexentry{set\_attribute() (miml.data.instance.Instance method)@\spxentry{set\_attribute()}\spxextra{miml.data.instance.Instance method}|hyperpage}{19}
+\indexentry{set\_bag() (miml.data.instance.Instance method)@\spxentry{set\_bag()}\spxextra{miml.data.instance.Instance method}|hyperpage}{19}
+\indexentry{show\_instance() (miml.data.instance.Instance method)@\spxentry{show\_instance()}\spxextra{miml.data.instance.Instance method}|hyperpage}{19}
+\indexentry{Bag (class in miml.data.bag)@\spxentry{Bag}\spxextra{class in miml.data.bag}|hyperpage}{19}
+\indexentry{add\_attribute() (miml.data.bag.Bag method)@\spxentry{add\_attribute()}\spxextra{miml.data.bag.Bag method}|hyperpage}{19}
+\indexentry{add\_instance() (miml.data.bag.Bag method)@\spxentry{add\_instance()}\spxextra{miml.data.bag.Bag method}|hyperpage}{19}
 \indexentry{delete\_attribute() (miml.data.bag.Bag method)@\spxentry{delete\_attribute()}\spxextra{miml.data.bag.Bag method}|hyperpage}{19}
-\indexentry{delete\_instance() (miml.data.bag.Bag method)@\spxentry{delete\_instance()}\spxextra{miml.data.bag.Bag method}|hyperpage}{19}
-\indexentry{get\_attribute() (miml.data.bag.Bag method)@\spxentry{get\_attribute()}\spxextra{miml.data.bag.Bag method}|hyperpage}{19}
-\indexentry{get\_attributes() (miml.data.bag.Bag method)@\spxentry{get\_attributes()}\spxextra{miml.data.bag.Bag method}|hyperpage}{19}
-\indexentry{get\_attributes\_name() (miml.data.bag.Bag method)@\spxentry{get\_attributes\_name()}\spxextra{miml.data.bag.Bag method}|hyperpage}{19}
+\indexentry{delete\_instance() (miml.data.bag.Bag method)@\spxentry{delete\_instance()}\spxextra{miml.data.bag.Bag method}|hyperpage}{20}
+\indexentry{get\_attribute() (miml.data.bag.Bag method)@\spxentry{get\_attribute()}\spxextra{miml.data.bag.Bag method}|hyperpage}{20}
+\indexentry{get\_attributes() (miml.data.bag.Bag method)@\spxentry{get\_attributes()}\spxextra{miml.data.bag.Bag method}|hyperpage}{20}
+\indexentry{get\_attributes\_name() (miml.data.bag.Bag method)@\spxentry{get\_attributes\_name()}\spxextra{miml.data.bag.Bag method}|hyperpage}{20}
 \indexentry{get\_features() (miml.data.bag.Bag method)@\spxentry{get\_features()}\spxextra{miml.data.bag.Bag method}|hyperpage}{20}
 \indexentry{get\_features\_name() (miml.data.bag.Bag method)@\spxentry{get\_features\_name()}\spxextra{miml.data.bag.Bag method}|hyperpage}{20}
 \indexentry{get\_instance() (miml.data.bag.Bag method)@\spxentry{get\_instance()}\spxextra{miml.data.bag.Bag method}|hyperpage}{20}
-\indexentry{get\_labels() (miml.data.bag.Bag method)@\spxentry{get\_labels()}\spxextra{miml.data.bag.Bag method}|hyperpage}{20}
-\indexentry{get\_labels\_name() (miml.data.bag.Bag method)@\spxentry{get\_labels\_name()}\spxextra{miml.data.bag.Bag method}|hyperpage}{20}
+\indexentry{get\_labels() (miml.data.bag.Bag method)@\spxentry{get\_labels()}\spxextra{miml.data.bag.Bag method}|hyperpage}{21}
+\indexentry{get\_labels\_name() (miml.data.bag.Bag method)@\spxentry{get\_labels\_name()}\spxextra{miml.data.bag.Bag method}|hyperpage}{21}
 \indexentry{get\_number\_attributes() (miml.data.bag.Bag method)@\spxentry{get\_number\_attributes()}\spxextra{miml.data.bag.Bag method}|hyperpage}{21}
 \indexentry{get\_number\_features() (miml.data.bag.Bag method)@\spxentry{get\_number\_features()}\spxextra{miml.data.bag.Bag method}|hyperpage}{21}
 \indexentry{get\_number\_instances() (miml.data.bag.Bag method)@\spxentry{get\_number\_instances()}\spxextra{miml.data.bag.Bag method}|hyperpage}{21}
 \indexentry{get\_number\_labels() (miml.data.bag.Bag method)@\spxentry{get\_number\_labels()}\spxextra{miml.data.bag.Bag method}|hyperpage}{21}
-\indexentry{set\_attribute() (miml.data.bag.Bag method)@\spxentry{set\_attribute()}\spxextra{miml.data.bag.Bag method}|hyperpage}{21}
+\indexentry{set\_attribute() (miml.data.bag.Bag method)@\spxentry{set\_attribute()}\spxextra{miml.data.bag.Bag method}|hyperpage}{22}
 \indexentry{set\_dataset() (miml.data.bag.Bag method)@\spxentry{set\_dataset()}\spxextra{miml.data.bag.Bag method}|hyperpage}{22}
 \indexentry{show\_bag() (miml.data.bag.Bag method)@\spxentry{show\_bag()}\spxextra{miml.data.bag.Bag method}|hyperpage}{22}
 \indexentry{MIMLDataset (class in miml.data.miml\_dataset)@\spxentry{MIMLDataset}\spxextra{class in miml.data.miml\_dataset}|hyperpage}{22}
 \indexentry{add\_attribute() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{add\_attribute()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{22}
-\indexentry{add\_bag() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{add\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{23}
+\indexentry{add\_bag() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{add\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{22}
 \indexentry{add\_instance() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{add\_instance()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{23}
 \indexentry{cardinality() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{cardinality()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{23}
 \indexentry{delete\_attribute() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{delete\_attribute()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{23}
-\indexentry{delete\_bag() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{delete\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
-\indexentry{delete\_instance() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{delete\_instance()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
-\indexentry{density() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{density()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
-\indexentry{describe() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{describe()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
-\indexentry{distinct() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{distinct()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
+\indexentry{delete\_bag() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{delete\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{23}
+\indexentry{delete\_instance() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{delete\_instance()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{23}
+\indexentry{density() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{density()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{23}
+\indexentry{describe() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{describe()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{23}
+\indexentry{distinct() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{distinct()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{23}
 \indexentry{get\_attribute() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_attribute()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
-\indexentry{get\_attributes() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_attributes()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
-\indexentry{get\_attributes\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_attributes\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
-\indexentry{get\_bag() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
-\indexentry{get\_features() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_features()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
-\indexentry{get\_features\_by\_bag() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_features\_by\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
-\indexentry{get\_features\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_features\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
-\indexentry{get\_instance() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_instance()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
-\indexentry{get\_labels() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_labels()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
-\indexentry{get\_labels\_by\_bag() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_labels\_by\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
-\indexentry{get\_labels\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_labels\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
-\indexentry{get\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
-\indexentry{get\_number\_attributes() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_number\_attributes()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
-\indexentry{get\_number\_bags() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_number\_bags()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
-\indexentry{get\_number\_features() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_number\_features()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
-\indexentry{get\_number\_instances() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_number\_instances()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
-\indexentry{get\_number\_labels() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_number\_labels()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{28}
-\indexentry{get\_statistics() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_statistics()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{28}
-\indexentry{save\_arff() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{save\_arff()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{28}
-\indexentry{save\_csv() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{save\_csv()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{28}
-\indexentry{set\_attribute() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{set\_attribute()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{28}
-\indexentry{set\_features\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{set\_features\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{29}
-\indexentry{set\_labels\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{set\_labels\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{29}
-\indexentry{set\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{set\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{29}
-\indexentry{show\_dataset() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{show\_dataset()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{29}
-\indexentry{split\_dataset() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{split\_dataset()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{30}
-\indexentry{split\_dataset\_cv() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{split\_dataset\_cv()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{30}
-\indexentry{Report (class in miml.report.report)@\spxentry{Report}\spxextra{class in miml.report.report}|hyperpage}{31}
-\indexentry{calculate\_metrics() (miml.report.report.Report method)@\spxentry{calculate\_metrics()}\spxextra{miml.report.report.Report method}|hyperpage}{31}
-\indexentry{to\_csv() (miml.report.report.Report method)@\spxentry{to\_csv()}\spxextra{miml.report.report.Report method}|hyperpage}{31}
-\indexentry{to\_string() (miml.report.report.Report method)@\spxentry{to\_string()}\spxextra{miml.report.report.Report method}|hyperpage}{31}
-\indexentry{BinaryRelevanceTransformation (class in miml.transformation.mimlTOmi.binary\_relevance\_transformation)@\spxentry{BinaryRelevanceTransformation}\spxextra{class in miml.transformation.mimlTOmi.binary\_relevance\_transformation}|hyperpage}{33}
-\indexentry{transform\_bag() (miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method}|hyperpage}{33}
-\indexentry{transform\_dataset() (miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method}|hyperpage}{33}
-\indexentry{LabelPowersetTransformation (class in miml.transformation.mimlTOmi.label\_powerset\_transformation)@\spxentry{LabelPowersetTransformation}\spxextra{class in miml.transformation.mimlTOmi.label\_powerset\_transformation}|hyperpage}{34}
-\indexentry{lp\_to\_ml\_label() (miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method)@\spxentry{lp\_to\_ml\_label()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}|hyperpage}{34}
-\indexentry{ml\_to\_lp\_label() (miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method)@\spxentry{ml\_to\_lp\_label()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}|hyperpage}{34}
-\indexentry{transform\_bag() (miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}|hyperpage}{35}
-\indexentry{transform\_dataset() (miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}|hyperpage}{35}
-\indexentry{ArithmeticTransformation (class in miml.transformation.mimlTOml.arithmetic)@\spxentry{ArithmeticTransformation}\spxextra{class in miml.transformation.mimlTOml.arithmetic}|hyperpage}{35}
-\indexentry{transform\_bag() (miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation method}|hyperpage}{35}
-\indexentry{transform\_dataset() (miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation method}|hyperpage}{36}
-\indexentry{GeometricTransformation (class in miml.transformation.mimlTOml.geometric)@\spxentry{GeometricTransformation}\spxextra{class in miml.transformation.mimlTOml.geometric}|hyperpage}{36}
-\indexentry{transform\_bag() (miml.transformation.mimlTOml.geometric.GeometricTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.geometric.GeometricTransformation method}|hyperpage}{36}
-\indexentry{transform\_dataset() (miml.transformation.mimlTOml.geometric.GeometricTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.geometric.GeometricTransformation method}|hyperpage}{37}
-\indexentry{MinMaxTransformation (class in miml.transformation.mimlTOml.minmax)@\spxentry{MinMaxTransformation}\spxextra{class in miml.transformation.mimlTOml.minmax}|hyperpage}{37}
-\indexentry{transform\_bag() (miml.transformation.mimlTOml.minmax.MinMaxTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.minmax.MinMaxTransformation method}|hyperpage}{37}
-\indexentry{transform\_dataset() (miml.transformation.mimlTOml.minmax.MinMaxTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.minmax.MinMaxTransformation method}|hyperpage}{38}
-\indexentry{MIMLtoMLTransformation (class in miml.transformation.mimlTOml.miml\_to\_ml\_transformation)@\spxentry{MIMLtoMLTransformation}\spxextra{class in miml.transformation.mimlTOml.miml\_to\_ml\_transformation}|hyperpage}{38}
-\indexentry{transform\_bag() (miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method}|hyperpage}{38}
-\indexentry{transform\_dataset() (miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method}|hyperpage}{38}
+\indexentry{get\_attributes() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_attributes()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
+\indexentry{get\_attributes\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_attributes\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
+\indexentry{get\_bag() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
+\indexentry{get\_features() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_features()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
+\indexentry{get\_features\_by\_bag() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_features\_by\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{24}
+\indexentry{get\_features\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_features\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
+\indexentry{get\_instance() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_instance()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
+\indexentry{get\_labels() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_labels()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
+\indexentry{get\_labels\_by\_bag() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_labels\_by\_bag()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
+\indexentry{get\_labels\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_labels\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
+\indexentry{get\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
+\indexentry{get\_number\_attributes() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_number\_attributes()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{25}
+\indexentry{get\_number\_bags() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_number\_bags()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
+\indexentry{get\_number\_features() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_number\_features()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
+\indexentry{get\_number\_instances() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_number\_instances()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
+\indexentry{get\_number\_labels() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_number\_labels()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
+\indexentry{get\_statistics() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{get\_statistics()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
+\indexentry{save\_arff() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{save\_arff()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
+\indexentry{save\_csv() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{save\_csv()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{26}
+\indexentry{set\_attribute() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{set\_attribute()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
+\indexentry{set\_features\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{set\_features\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
+\indexentry{set\_labels\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{set\_labels\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
+\indexentry{set\_name() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{set\_name()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
+\indexentry{show\_dataset() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{show\_dataset()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
+\indexentry{split\_dataset() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{split\_dataset()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{27}
+\indexentry{split\_dataset\_cv() (miml.data.miml\_dataset.MIMLDataset method)@\spxentry{split\_dataset\_cv()}\spxextra{miml.data.miml\_dataset.MIMLDataset method}|hyperpage}{28}
+\indexentry{Report (class in miml.report.report)@\spxentry{Report}\spxextra{class in miml.report.report}|hyperpage}{29}
+\indexentry{calculate\_metrics() (miml.report.report.Report method)@\spxentry{calculate\_metrics()}\spxextra{miml.report.report.Report method}|hyperpage}{29}
+\indexentry{to\_csv() (miml.report.report.Report method)@\spxentry{to\_csv()}\spxextra{miml.report.report.Report method}|hyperpage}{29}
+\indexentry{to\_string() (miml.report.report.Report method)@\spxentry{to\_string()}\spxextra{miml.report.report.Report method}|hyperpage}{29}
+\indexentry{BinaryRelevanceTransformation (class in miml.transformation.mimlTOmi.binary\_relevance\_transformation)@\spxentry{BinaryRelevanceTransformation}\spxextra{class in miml.transformation.mimlTOmi.binary\_relevance\_transformation}|hyperpage}{31}
+\indexentry{transform\_bag() (miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method}|hyperpage}{31}
+\indexentry{transform\_dataset() (miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOmi.binary\_relevance\_transformation.BinaryRelevanceTransformation method}|hyperpage}{31}
+\indexentry{LabelPowersetTransformation (class in miml.transformation.mimlTOmi.label\_powerset\_transformation)@\spxentry{LabelPowersetTransformation}\spxextra{class in miml.transformation.mimlTOmi.label\_powerset\_transformation}|hyperpage}{32}
+\indexentry{lp\_to\_ml\_label() (miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method)@\spxentry{lp\_to\_ml\_label()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}|hyperpage}{32}
+\indexentry{ml\_to\_lp\_label() (miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method)@\spxentry{ml\_to\_lp\_label()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}|hyperpage}{32}
+\indexentry{transform\_bag() (miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}|hyperpage}{32}
+\indexentry{transform\_dataset() (miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOmi.label\_powerset\_transformation.LabelPowersetTransformation method}|hyperpage}{32}
+\indexentry{ArithmeticTransformation (class in miml.transformation.mimlTOml.arithmetic)@\spxentry{ArithmeticTransformation}\spxextra{class in miml.transformation.mimlTOml.arithmetic}|hyperpage}{33}
+\indexentry{transform\_bag() (miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation method}|hyperpage}{33}
+\indexentry{transform\_dataset() (miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.arithmetic.ArithmeticTransformation method}|hyperpage}{33}
+\indexentry{GeometricTransformation (class in miml.transformation.mimlTOml.geometric)@\spxentry{GeometricTransformation}\spxextra{class in miml.transformation.mimlTOml.geometric}|hyperpage}{33}
+\indexentry{transform\_bag() (miml.transformation.mimlTOml.geometric.GeometricTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.geometric.GeometricTransformation method}|hyperpage}{33}
+\indexentry{transform\_dataset() (miml.transformation.mimlTOml.geometric.GeometricTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.geometric.GeometricTransformation method}|hyperpage}{34}
+\indexentry{MinMaxTransformation (class in miml.transformation.mimlTOml.minmax)@\spxentry{MinMaxTransformation}\spxextra{class in miml.transformation.mimlTOml.minmax}|hyperpage}{34}
+\indexentry{transform\_bag() (miml.transformation.mimlTOml.minmax.MinMaxTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.minmax.MinMaxTransformation method}|hyperpage}{34}
+\indexentry{transform\_dataset() (miml.transformation.mimlTOml.minmax.MinMaxTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.minmax.MinMaxTransformation method}|hyperpage}{34}
+\indexentry{MIMLtoMLTransformation (class in miml.transformation.mimlTOml.miml\_to\_ml\_transformation)@\spxentry{MIMLtoMLTransformation}\spxextra{class in miml.transformation.mimlTOml.miml\_to\_ml\_transformation}|hyperpage}{35}
+\indexentry{transform\_bag() (miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method)@\spxentry{transform\_bag()}\spxextra{miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method}|hyperpage}{35}
+\indexentry{transform\_dataset() (miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method)@\spxentry{transform\_dataset()}\spxextra{miml.transformation.mimlTOml.miml\_to\_ml\_transformation.MIMLtoMLTransformation method}|hyperpage}{35}
+\indexentry{HausdorffDistance (class in miml.core.hausdorff\_distance)@\spxentry{HausdorffDistance}\spxextra{class in miml.core.hausdorff\_distance}|hyperpage}{37}
+\indexentry{distance() (miml.core.hausdorff\_distance.HausdorffDistance method)@\spxentry{distance()}\spxextra{miml.core.hausdorff\_distance.HausdorffDistance method}|hyperpage}{37}
+\indexentry{MaximalHausdorff (class in miml.core.maximal\_hausdorff)@\spxentry{MaximalHausdorff}\spxextra{class in miml.core.maximal\_hausdorff}|hyperpage}{37}
+\indexentry{distance() (miml.core.maximal\_hausdorff.MaximalHausdorff method)@\spxentry{distance()}\spxextra{miml.core.maximal\_hausdorff.MaximalHausdorff method}|hyperpage}{37}
+\indexentry{MinimalHausdorff (class in miml.core.minimal\_hausdorff)@\spxentry{MinimalHausdorff}\spxextra{class in miml.core.minimal\_hausdorff}|hyperpage}{38}
+\indexentry{distance() (miml.core.minimal\_hausdorff.MinimalHausdorff method)@\spxentry{distance()}\spxextra{miml.core.minimal\_hausdorff.MinimalHausdorff method}|hyperpage}{38}
+\indexentry{AverageHausdorff (class in miml.core.average\_hausdorff)@\spxentry{AverageHausdorff}\spxextra{class in miml.core.average\_hausdorff}|hyperpage}{38}
+\indexentry{distance() (miml.core.average\_hausdorff.AverageHausdorff method)@\spxentry{distance()}\spxextra{miml.core.average\_hausdorff.AverageHausdorff method}|hyperpage}{38}
